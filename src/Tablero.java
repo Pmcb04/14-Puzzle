@@ -563,6 +563,223 @@ public class Tablero {
 		return mejor;
 	}
 	
+	public void GenerarMovimientosA1(GestorSolucion g, int coste) {//A*con atajos
+		Tablero aux = new Tablero(); 
+		copy(aux); // copiamos el tablero actual
+		boolean fin = false;  boolean b0, b1; Tablero t; 
+		int k;
+		
+		ArrayList<Tablero> repetidos = new ArrayList<Tablero>();
+		
+		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeros que representan los nulos
+		while(!nulo.isEmpty() && !fin) {
+			
+			ArrayList <Integer> mov = generarMovimientos(); //Array con todos los movimientos aleatorios
+			Integer num = nulo.get(0);
+			
+			while(!mov.isEmpty() && !fin) {
+				
+				Integer movimiento = mov.get(0);
+				Nulo n = aux.getNulo(num);
+				
+				switch(movimiento) {
+					case 0:
+						if(aux.moverNorte(n)) {
+							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
+							
+							aux.setHeuristica(aux.FuncionHeuristica1());
+							aux.setCoste(coste);
+							aux.setFuncion(aux.getHeuristica(), coste);
+							
+							if(!b0 &&  !b1){
+								aux.setPadre(this);
+								g.addNodos();
+								g.addAbierto(aux);
+								if(aux.getHeuristica() == 0) fin = true;
+								aux = new Tablero();
+							}else{
+								
+								if(b1) {//si el tablero está en abiertos, no puede tener hijos, porque no se ha llegado a expandir
+									t = g.getRepetidoAbiertos(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this); 
+										g.sortAbiertos();
+									}
+								}else {
+									t = g.getRepetidoCerrados(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this);
+										g.addHijo(t, repetidos);
+										k = repetidos.size();
+										while(k > 0) {
+											repetidos = g.Busqueda(repetidos);
+											k = repetidos.size();
+										}
+									}	
+							   }
+						    }
+						}
+						break;
+						
+					case 1:
+						if(aux.moverEste(n)) {
+							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
+							
+							aux.setHeuristica(aux.FuncionHeuristica1());
+							aux.setCoste(coste);
+							aux.setFuncion(aux.getHeuristica(), coste);
+							
+							if(!b0 &&  !b1){
+								aux.setPadre(this);
+								g.addNodos();
+								g.addAbierto(aux);
+								if(aux.getHeuristica() == 0) fin = true;
+								aux = new Tablero();
+							}else{
+								
+								if(b1) {
+									t = g.getRepetidoAbiertos(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this); 
+										g.sortAbiertos();
+									}
+								}else {
+									t = g.getRepetidoCerrados(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this);
+										g.addHijo(t, repetidos);
+										k = repetidos.size();
+										while(k > 0) {
+											repetidos = g.Busqueda(repetidos);
+											k = repetidos.size();
+										}
+									}	
+							   }
+						    }
+						}
+						break;
+						
+					case 2:
+						if(aux.moverOeste(n)) {
+							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
+							
+							aux.setHeuristica(aux.FuncionHeuristica1());
+							aux.setCoste(coste);
+							aux.setFuncion(aux.getHeuristica(), coste);
+							
+							if(!b0 &&  !b1){
+								aux.setPadre(this);
+								g.addNodos();
+								g.addAbierto(aux);
+								if(aux.getHeuristica() == 0) fin = true;
+								aux = new Tablero();
+							}else{
+								
+								if(b1) {
+									t = g.getRepetidoAbiertos(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this); 
+										g.sortAbiertos();
+									}
+								}else {
+									t = g.getRepetidoCerrados(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this);
+										g.addHijo(t, repetidos);
+										k = repetidos.size();
+										while(k > 0) {
+											repetidos = g.Busqueda(repetidos);
+											k = repetidos.size();
+										}
+									}	
+							   }
+						    }
+						}
+						break;
+					
+					case 3:
+						if(aux.moverSur(n)) {
+							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
+							
+							aux.setHeuristica(aux.FuncionHeuristica1());
+							aux.setCoste(coste);
+							aux.setFuncion(aux.getHeuristica(), coste);
+							
+							if(!b0 &&  !b1){
+								aux.setPadre(this);
+								g.addNodos();
+								g.addAbierto(aux);
+								if(aux.getHeuristica() == 0) fin = true;
+								aux = new Tablero();
+							}else{
+								
+								if(b1) {
+									t = g.getRepetidoAbiertos(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this); 
+										g.sortAbiertos();
+									}
+								}else {
+									t = g.getRepetidoCerrados(aux);
+									if(aux.getFuncion() < t.getFuncion()) {
+										g.addNodos();
+										t.setHeuristica(aux.getHeuristica());
+										t.setCoste(coste);
+										t.setFuncion(aux.getHeuristica(), coste);
+										t.setPadre(this);
+										g.addHijo(t, repetidos);
+										k = repetidos.size();
+										while(k > 0) {
+											repetidos = g.Busqueda(repetidos);
+											k = repetidos.size();
+										}
+									}	
+							   }
+						    }
+						}
+						break;
+			
+				}
+				 
+				mov.remove(0);
+				copy(aux);
+				
+		    }
+			
+			nulo.remove(0);
+			copy(aux);
+			
+		}
+	}
+	
 	/**
 	 * Genera el mejorMovimiento en cada paso del algoritmo de A*, 
 	 * como es algoritmo A*, tiene que coger el que que menos f'(n) nos de
