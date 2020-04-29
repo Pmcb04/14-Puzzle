@@ -238,6 +238,119 @@ public class GestorSolucion {
 		
 	}
 	
+		//Devuelve el tablero repetido
+	public Tablero getRepetidoAbiertos(Tablero t) {
+		
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		Tablero aux = null;
+		boolean diferente = false;
+		boolean iguales = false;
+		
+		while(k < abiertos.size() && !iguales) {
+			aux = abiertos.get(k);
+			while(i < t.getTamTablero() && !diferente && !iguales) {
+				while(j < t.getTamTablero() && !diferente) {
+					if(t.getValor(i, j) != aux.getValor(i, j) ) diferente = true;
+					j++;
+				}
+				i++;
+				j = 0;
+			}
+			k++;
+			i = 0;
+			if(!diferente) iguales = true;
+			diferente = false;
+		}
+		
+		return aux;	
+	}
+	
+	public Tablero getRepetidoCerrados(Tablero t) {
+		
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		Tablero aux = null;
+		boolean diferente = false;
+		boolean iguales = false;
+		
+		while(k < cerrados.size() && !iguales) {
+			aux = cerrados.get(k);
+			while(i < t.getTamTablero() && !diferente && !iguales) {
+				while(j < t.getTamTablero() && !diferente) {
+					if(t.getValor(i, j) != aux.getValor(i, j) ) diferente = true;
+					j++;
+				}
+				i++;
+				j = 0;
+			}
+			k++;
+			i = 0;
+			if(!diferente) iguales = true;
+			diferente = false;
+		}
+		
+		return aux;	
+	}
+	
+	//Numero de nodos en abiertos y cerrados que tienen como padre a t
+	public int numHijos(Tablero t) {
+		int num = 0;
+		int i = 0; Tablero aux;
+		while(i < abiertos.size()) {
+			aux = abiertos.get(i);
+			if(aux.getPadre() == t) num++;
+		  i++;
+		}
+		
+		return num;
+	}
+	
+	 public ArrayList<Tablero> Busqueda(ArrayList<Tablero> hijos){
+		Tablero t = hijos.get(0);
+		hijos.remove(0);
+		
+		Tablero aux;
+		int i = 0; 
+		while(i < cerrados.size()) {
+			aux = cerrados.get(i);
+			if(aux.getPadre() == t) {
+				aux.setCoste(t.getCoste()+1);
+				aux.setHeuristica(aux.FuncionHeuristica1());
+				aux.setFuncion(aux.getHeuristica(), aux.getCoste());
+				hijos.add(aux);
+			}
+		  i++;
+		}
+		
+		i = 0; int cont = 0;
+		while(i < abiertos.size()) {
+			aux = abiertos.get(i);
+			if(aux.getPadre() == t) {
+				aux.setCoste(t.getCoste()+1);
+				aux.setHeuristica(aux.FuncionHeuristica1());
+				aux.setFuncion(aux.getHeuristica(), aux.getCoste());
+				hijos.add(aux);
+				cont++;
+			}
+		  i++;
+		}
+		if(cont > 0) sortAbiertos();
+		
+	 return hijos;
+   }
+	
+	
+	
+	
+	
+	public ArrayList<Tablero> addHijo(Tablero t, ArrayList<Tablero> hijos){
+		hijos.add(t);
+		return hijos;
+	}
+	
 	/***
 	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
 	 */
