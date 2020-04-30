@@ -20,6 +20,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
     initComponents();
     indexSolucion = 0;
     labelSolucion.setText(g.getSolucionFinal());
+    labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
     numNodosInt.setText(g.getNumNodos() + "");
     numNodosInt1.setText(String.format("%.0f",g.getTiempoEjecucion())+ " ns");
     setBotones();
@@ -28,6 +29,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
     trozearSolucion();       
     ImageIcon img = new ImageIcon("resources/unex.png");
     setIconImage(img.getImage());
+    this.setResizable(true);
     setVisible(true);
   }
   
@@ -222,8 +224,11 @@ public class Solucion_Frame extends javax.swing.JFrame {
    */
   // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents() {
+    private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -302,8 +307,10 @@ public class Solucion_Frame extends javax.swing.JFrame {
         numNodosString1 = new javax.swing.JLabel();
         numNodosInt1 = new javax.swing.JLabel();
 
+       
+        jScrollPane1.setViewportView(jList1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -330,9 +337,10 @@ public class Solucion_Frame extends javax.swing.JFrame {
             }
         });
 
+
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
 
-        labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
+        labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 36)); // NOI18N
         labelSolucion.setForeground(new java.awt.Color(255, 255, 255));
         labelSolucion.setText("7N 3O 5E");
 
@@ -1237,7 +1245,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Solucion:");
+        jLabel1.setText("Solución:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1257,7 +1265,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString.setText("Numero de nodos:");
+        numNodosString.setText("Número de nodos:");
 
         numNodosInt.setBackground(new java.awt.Color(255, 255, 255));
         numNodosInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -1265,7 +1273,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString1.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString1.setText("Tiempo ejecucion:");
+        numNodosString1.setText("Tiempo ejecución:");
 
         numNodosInt1.setForeground(new java.awt.Color(255, 255, 255));
         numNodosInt1.setText("23 ns");
@@ -1323,7 +1331,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1341,18 +1349,17 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
+        jScrollPane2.setViewportView(jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(jScrollPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane2)
         );
 
         pack();
@@ -1478,11 +1485,14 @@ public class Solucion_Frame extends javax.swing.JFrame {
     private javax.swing.JButton boton76;
     private javax.swing.JButton boton77;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel labelSolucion;
