@@ -15,10 +15,11 @@ public class Solucion_Frame extends javax.swing.JFrame {
   /**
    * Creates new form Solucion_Frame
    */
-  public Solucion_Frame(GestorSolucion g) {
+  public Solucion_Frame(GestorSolucion g, String puzzle, String metodo) {
     this.g = g;
     initComponents();
     indexSolucion = 0;
+    jLabel1.setText("Solución " + puzzle + ":");
     labelSolucion.setText(g.getSolucionFinal());
     labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
     numNodosInt.setText(g.getNumNodos() + "");
@@ -26,7 +27,8 @@ public class Solucion_Frame extends javax.swing.JFrame {
     setBotones();
     setValores();
     ocultarNulos();
-    trozearSolucion();       
+    trozearSolucion();   
+    printSolucion(puzzle, metodo);
     ImageIcon img = new ImageIcon("resources/unex.png");
     setIconImage(img.getImage());
     this.setResizable(true);
@@ -91,6 +93,18 @@ public class Solucion_Frame extends javax.swing.JFrame {
   private boolean isLetra(String s) {
 	  if(s.equals("N") || s.equals("S") || s.equals("O") || s.equals("E")) return true;
 	  else return false;
+  }
+  
+  private void printSolucion(String puzzle, String metodo, boolean solucionado) {
+	  
+	  System.out.println("Solución del " + puzzle + " resuelto por el metodo " + metodo + ":");
+	  
+	  for (String s : solucion) System.out.print(s + " ");
+	  
+	  System.out.println();
+	  System.out.println();
+	  
+	  
   }
   
   private void trozearSolucion() {

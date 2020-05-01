@@ -501,16 +501,12 @@ public class GestorSolucion {
 		addAbierto(actual);
 
 		while(!fin) {
-			
 			actual = primerAbierto();
 			removeAbierto();
 			addCerrado(actual);
 			if(actual.FuncionHeuristica1() == 0) fin = true;
 			actual.GenerarMovimientosA1(this, actual.getCoste()+1);
-			sortAbiertos();
-			
-	
-				
+			sortAbiertos();				
 		}
 		
 		int i = 0;

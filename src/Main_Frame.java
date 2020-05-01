@@ -301,7 +301,7 @@ public class Main_Frame extends javax.swing.JFrame {
         dispose();
     	GestorSolucion g = getPuzzle(jComboBox1.getSelectedItem().toString());
         getSolucion(g, getRadioSelect().getText());
-        new Solucion_Frame(g);
+        new Solucion_Frame(g,jComboBox1.getSelectedItem().toString(), getRadioSelect().getText());
 
     }//GEN-LAST:event_jButton1MouseClicked
 
