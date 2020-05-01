@@ -15,14 +15,14 @@ public class Main_Frame extends javax.swing.JFrame {
     * Creates new form Main_Frame
      */
     public Main_Frame() {
-    	
-    	 try { UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); } 
+
+    	 try { UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); }
     	 catch (UnsupportedLookAndFeelException e) { e.getMessage();}
     	 catch (ClassNotFoundException e) { e.getMessage();}
     	 catch (InstantiationException e) {e.getMessage();}
     	 catch (IllegalAccessException e) {e.getMessage(); }
-    	
-    	
+
+
     	initComponents();
         setSize(500, 500);
         setTitle("Proyecto IASI 2019/2020");
@@ -31,7 +31,7 @@ public class Main_Frame extends javax.swing.JFrame {
         setIconImage(img.getImage());
         setVisible(true);
     }
-    
+
     private JRadioButton getRadioSelect(){
        for (Enumeration e=buttonGroup1.getElements(); e.hasMoreElements(); )
         {
@@ -44,20 +44,20 @@ public class Main_Frame extends javax.swing.JFrame {
 
         return null;
     }
-    
+
     private GestorSolucion getPuzzle(String puzzle){
     	GestorSolucion g = new GestorSolucion();
         new InitData(g, puzzle);
         return g;
     }
-    
+
     private void getSolucion(GestorSolucion g, String algoritmo) {
-    	
+
     	if(algoritmo.equals(jRadioButton1.getText())) g.escaladaSimple();
     	if(algoritmo.equals(jRadioButton2.getText())) g.escaladaMaximaPendiente();
     	if(algoritmo.equals(jRadioButton3.getText())) g.algoritmoA();
     	if(algoritmo.equals(jRadioButton4.getText())) g.escaladaMaximaPendiente1();
-    	
+
     }
 
     /**
@@ -133,7 +133,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         SeleccioneNivel1.setFont(new java.awt.Font("Roboto", 2, 18)); // NOI18N
         SeleccioneNivel1.setForeground(new java.awt.Color(255, 255, 255));
-        SeleccioneNivel1.setText("Seleccione modo resolución:");
+        SeleccioneNivel1.setText("Seleccione modo resoluciÃ³n:");
         SeleccioneNivel1.setToolTipText("");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -182,19 +182,20 @@ public class Main_Frame extends javax.swing.JFrame {
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jRadioButton2.setText("Escalada Máxima Pendiente");
+        jRadioButton2.setText("Escalada Mï¿½xima Pendiente");
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jRadioButton3.setText("Algoritmo A*");
-        
+
         jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jRadioButton4.setText("Modificación Escalada Máxima Pendiente");
+        jRadioButton4.setText("Modificaciï¿½n Escalada Mï¿½xima Pendiente");
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
+
         jToggleButton1.setIcon(new ImageIcon("resources/info_icon.png"));
         jToggleButton1.setBorder(null);
         jToggleButton1.setBorderPainted(false);
@@ -304,7 +305,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1MouseClicked
 
- 
+
 
 
      // Variables declaration - do not modify//GEN-BEGIN:variables
