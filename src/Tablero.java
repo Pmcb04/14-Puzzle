@@ -327,9 +327,6 @@ public class Tablero {
 
 	}
 	
-	/*public void imprimirMovimiento() {
-		System.out.printf(movimiento + " ");
-	}*/
 	
 	/**
 	 * Constructor por copia
@@ -360,40 +357,6 @@ public class Tablero {
 		return t;
 		
 	}
-	
-	
-	/*public boolean comprobarMatriz(Tablero t) {//Si las dos matrices(la actual y la de t) son iguales devuelve true
-			
-		boolean enc = true; int i = 0, j = 0;
-			
-		while(i < tamTablero && enc) {
-			while(j < tamTablero && enc) {
-				if(t.getValor(i, j) != matrizTablero[i][j]) 
-					enc = false;
-				j++;	
-			}	
-			i++;
-		}
-			
-		return enc;
-			
-	}*/
-		
-		
-	/*public boolean Pertenece (ArrayList<Tablero> cjto) {//Comprueba si este tablero esta incluido en el conjunto, devuelve true en este caso
-			
-		boolean enc = false;
-			
-		if(!cjto.isEmpty()) {
-			Iterator<Tablero> it = cjto.iterator();
-			while(it.hasNext() && !enc) {
-				Tablero t = it.next();
-				enc = comprobarMatriz(t);	
-			}
-		}
-			
-		return enc;
-	}*/
 		
 	/**
 	 * Genera una secuencia aleatoria de los movimientos para mover el tablero

@@ -471,8 +471,6 @@ public class GestorSolucion {
 				//tfinal = actual;
 				solucionFinal += actual.getMovimiento() + " ";
 				
-				System.out.println("Heuristica: " + nuevo.FuncionHeuristica1());
-				
 				if(actual.FuncionHeuristica1() == 0) fin = true;//TODO porque termina? No entiendo
 				
 			}
@@ -531,10 +529,6 @@ public class GestorSolucion {
 				solucionFinal += s + " ";
 		}
 		
-		
-		System.out.println(solucionFinal.replace(" ", "*"));
-		
-		System.out.println("Solucion: " + solucionFinal);
 				
 		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo

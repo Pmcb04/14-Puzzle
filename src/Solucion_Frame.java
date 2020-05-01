@@ -227,7 +227,6 @@ public class Solucion_Frame extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
@@ -306,16 +305,16 @@ public class Solucion_Frame extends javax.swing.JFrame {
         numNodosInt = new javax.swing.JLabel();
         numNodosString1 = new javax.swing.JLabel();
         numNodosInt1 = new javax.swing.JLabel();
+        otro_puzzle = new javax.swing.JButton();
 
-       
-        jScrollPane1.setViewportView(jList1);
+      
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setIcon(new javax.swing.ImageIcon("resources/flec_der.png")); // NOI18N
+        jToggleButton1.setIcon(new ImageIcon("resources/flec_der.png"));
         jToggleButton1.setBorderPainted(false);
         jToggleButton1.setContentAreaFilled(false);
         jToggleButton1.setFocusPainted(false);
@@ -325,9 +324,10 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 jToggleButton1MouseClicked(evt);
             }
         });
+      
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon("resources/flec_izq.png")); // NOI18N
         jToggleButton2.setBorderPainted(false);
+        jToggleButton2.setIcon(new ImageIcon("resources/flec_izq.png"));
         jToggleButton2.setContentAreaFilled(false);
         jToggleButton2.setFocusPainted(false);
         jToggleButton2.setFocusable(false);
@@ -336,7 +336,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 jToggleButton2MouseClicked(evt);
             }
         });
-
+       
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
 
@@ -431,6 +431,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         boton06.setFocusable(false);
         boton06.setRequestFocusEnabled(false);
         boton06.setRolloverEnabled(false);
+
 
         boton07.setBackground(new java.awt.Color(255, 255, 255));
         boton07.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -1004,6 +1005,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         boton77.setRequestFocusEnabled(false);
         boton77.setRolloverEnabled(false);
 
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1237,7 +1239,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
                             .addComponent(boton47, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(96, 96, 96)
                             .addComponent(boton67, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
@@ -1307,6 +1309,21 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        otro_puzzle.setBackground(new java.awt.Color(51, 153, 255));
+        otro_puzzle.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        otro_puzzle.setForeground(new java.awt.Color(255, 255, 255));
+        otro_puzzle.setText("ELEGIR OTRO PUZZLE");
+        otro_puzzle.setBorderPainted(false);
+        otro_puzzle.setDefaultCapable(false);
+        otro_puzzle.setFocusPainted(false);
+        otro_puzzle.setFocusable(false);
+        otro_puzzle.setInheritsPopupMenu(true);
+        otro_puzzle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                otro_puzzleMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1315,37 +1332,37 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(228, 228, 228)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(308, 308, 308)
+                .addComponent(otro_puzzle)
+                .addGap(243, 243, 243))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(78, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(otro_puzzle))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addComponent(jToggleButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(12, 12, 12))
         );
 
@@ -1365,6 +1382,11 @@ public class Solucion_Frame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void otro_puzzleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otro_puzzleMouseClicked
+        dispose();
+        new Main_Frame();
+    }//GEN-LAST:event_otro_puzzleMouseClicked
 
   private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jToggleButton1MouseClicked
 	  
@@ -1485,7 +1507,6 @@ public class Solucion_Frame extends javax.swing.JFrame {
     private javax.swing.JButton boton76;
     private javax.swing.JButton boton77;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1500,5 +1521,6 @@ public class Solucion_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel numNodosInt1;
     private javax.swing.JLabel numNodosString;
     private javax.swing.JLabel numNodosString1;
+    private javax.swing.JButton otro_puzzle;
     // End of variables declaration//GEN-END:variables
 }
