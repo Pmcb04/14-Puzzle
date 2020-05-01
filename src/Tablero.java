@@ -605,7 +605,7 @@ public class Tablero {
 		return mejor;
 	}
 	
-	public void GenerarMovimientosA1(GestorSolucion g, int coste) {//A* con atajos
+	public void GenerarMovimientosA1(GestorSolucion g, int coste) {
 		Tablero aux = new Tablero(); 
 		copy(aux); // copiamos el tablero actual
 		boolean fin = false;  boolean b0, b1; Tablero t; 
@@ -648,6 +648,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this); 
 										g.sortAbiertos();
 									}
@@ -658,6 +659,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this);
 										g.addHijo(t, repetidos);
 										k = repetidos.size();
@@ -694,6 +696,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this); 
 										g.sortAbiertos();
 									}
@@ -704,6 +707,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this);
 										g.addHijo(t, repetidos);
 										k = repetidos.size();
@@ -740,6 +744,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this); 
 										g.sortAbiertos();
 									}
@@ -750,6 +755,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this);
 										g.addHijo(t, repetidos);
 										k = repetidos.size();
@@ -786,6 +792,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this); 
 										g.sortAbiertos();
 									}
@@ -796,6 +803,7 @@ public class Tablero {
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
+										t.setMovimiento(aux.getMovimiento());
 										t.setPadre(this);
 										g.addHijo(t, repetidos);
 										k = repetidos.size();
