@@ -563,6 +563,85 @@ public class Tablero {
 		return mejor;
 	}
 	
+	
+	public Tablero MejorMovimientoEMP1(Tablero mejor, GestorSolucion s) {
+		Tablero aux = new Tablero(); copy(aux);
+	    boolean enc = false, fin = false, igual = false, peor = false; int mejorh = this.FuncionHeuristica1();
+	    
+		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeors que representan los nulos
+		
+		while(!nulo.isEmpty() && !fin) {
+			
+			ArrayList <Integer> mov = generarMovimientos(); //Array con todos los movimientos aleatorios
+			Integer num = nulo.get(0);
+			
+			while(!mov.isEmpty() &&!fin) {
+				
+				Integer movimiento = mov.get(0);
+				Nulo n = aux.getNulo(num);
+				
+				switch(movimiento) {
+					case 0:
+						if(aux.moverNorte(n)) s.addNodos();
+						break;
+						
+					case 1:
+						if(aux.moverEste(n)) s.addNodos();
+						break;
+						
+					case 2:
+						if(aux.moverOeste(n)) s.addNodos();
+						break;
+					
+					case 3:
+						if(aux.moverSur(n)) s.addNodos();
+						break;
+			
+				}
+				
+				if(!s.isCerrado(aux)) {//Si no esta repetido
+					int h = aux.FuncionHeuristica1();//TODO habra que modificar
+					
+					if(h < mejorh) {
+						mejorh = h;
+						enc = true;
+						aux.copy(mejor);
+						if(h == 0) fin = true;
+					}else if(h == mejorh && !enc) {
+						mejorh = h;
+						igual = true;
+						aux.copy(mejor);
+					}else if(h > mejorh && !enc) {
+						mejorh = h;
+						peor = true;
+						aux.copy(mejor);
+					}
+					
+				}
+				
+				
+				mov.remove(0);
+				copy(aux);
+				
+		    }
+			
+			nulo.remove(0);
+			copy(aux);
+			
+		}
+		
+		if(!enc) {
+			if(igual) s.addNodoIgual();
+			else s.addNodoPeor();
+			
+			if(s.getNodoIgual() == 80 && s.getNodoPeor() == 50) mejor = null;
+		}
+		
+		s.addCerrado(mejor);//Lo añadimos para comprobar que no volverlo a generar
+		
+		return mejor;
+	}
+	
 	public void GenerarMovimientosA1(GestorSolucion g, int coste) {//A*con atajos
 		Tablero aux = new Tablero(); 
 		copy(aux); // copiamos el tablero actual

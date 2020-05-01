@@ -15,6 +15,8 @@ public class GestorSolucion {
 	private String solucionFinal;//guarda los movimientos que se realizan 
 	private List<Tablero> abiertos; // lista de nodos abiertos
 	private List<Tablero> cerrados; // lista de nodos cerrados
+	private int nodoIgual;
+	private int nodoPeor;
 	
 	
 	/***
@@ -87,6 +89,14 @@ public class GestorSolucion {
 		this.solucionFinal = solucionFinal;
 	}
 	
+	public void setNodoIgual(int n) {
+		nodoIgual = n;
+	}
+	
+	public void setNodoPeor(int n) {
+		nodoPeor = n;
+	}
+	
 	/***
 	 * Retorna el tablero t
 	 * @return t
@@ -137,11 +147,27 @@ public class GestorSolucion {
 		return solucionFinal;
 	}
 	
+	public int getNodoIgual() {
+		return nodoIgual;
+	}
+	
+	public int getNodoPeor() {
+		return nodoPeor;
+	}
+	
 	/***
 	 * Incrementa la cifra de numero de nodos generados en uno
 	 */
 	public void addNodos() {
 		numNodos++;
+	}
+	
+	public void addNodoIgual() {
+		nodoIgual++;
+	}
+	
+	public void addNodoPeor() {
+		nodoPeor++;
 	}
 	
 	/**
@@ -417,6 +443,49 @@ public class GestorSolucion {
 	
 		
 	}
+	
+	
+	/***
+	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
+	 * @return fin
+	 */
+	public boolean escaladaMaximaPendiente1() {
+		
+		long initTime = System.nanoTime();//Tiempo inicial
+		
+		boolean fin = false; solucionFinal = "";
+		Tablero nuevo = new Tablero(); Tablero actual = t;
+		nodoIgual = 0; nodoPeor = 0;
+		
+		cerrados = new ArrayList<Tablero>();
+		
+		while(nuevo != null && nodoIgual < 80 && nodoPeor < 50 && !fin) {
+			
+			nuevo = new Tablero();
+			nuevo = actual.MejorMovimientoEMP1(nuevo, this);
+			
+			if(nuevo != null) {
+				
+				nuevo.setPadre(actual);
+				actual = nuevo;
+				//tfinal = actual;
+				solucionFinal += actual.getMovimiento() + " ";
+				
+				System.out.println("Heuristica: " + nuevo.FuncionHeuristica1());
+				
+				if(actual.FuncionHeuristica1() == 0) fin = true;//TODO porque termina? No entiendo
+				
+			}
+		}
+		
+		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
+		setTiempoEjecucion(tiempo);
+		
+		return fin;
+		
+	}
+	
 	
 	public void algoritmoA(){
 		long initTime = System.nanoTime();//Tiempo inicial
