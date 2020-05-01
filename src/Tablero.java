@@ -605,7 +605,7 @@ public class Tablero {
 		return mejor;
 	}
 	
-	public void GenerarMovimientosA1(GestorSolucion g, int coste) {//A*con atajos
+	public void GenerarMovimientosA1(GestorSolucion g, int coste) {//A* con atajos
 		Tablero aux = new Tablero(); 
 		copy(aux); // copiamos el tablero actual
 		boolean fin = false;  boolean b0, b1; Tablero t; 
@@ -644,7 +644,7 @@ public class Tablero {
 								if(b1) {//si el tablero está en abiertos, no puede tener hijos, porque no se ha llegado a expandir
 									t = g.getRepetidoAbiertos(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
+										g.addNodos();//TODO cuidado que no estamos contando todos
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
