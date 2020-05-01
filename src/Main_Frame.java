@@ -133,7 +133,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         SeleccioneNivel1.setFont(new java.awt.Font("Roboto", 2, 18)); // NOI18N
         SeleccioneNivel1.setForeground(new java.awt.Color(255, 255, 255));
-        SeleccioneNivel1.setText("Seleccione modo resoluciÃ³n:");
+        SeleccioneNivel1.setText("Seleccione modo resolución:");
         SeleccioneNivel1.setToolTipText("");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -182,7 +182,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jRadioButton2.setText("Escalada Mï¿½xima Pendiente");
+        jRadioButton2.setText("Escalada Máxima Pendiente");
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton3);
@@ -192,7 +192,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jRadioButton4.setText("Modificaciï¿½n Escalada Mï¿½xima Pendiente");
+        jRadioButton4.setText("Modificación Escalada Máxima Pendiente");
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
 
