@@ -395,7 +395,7 @@ public class GestorSolucion {
 				actual = nuevo;
 				solucionFinal += actual.getMovimiento() + " ";
 				
-				if(actual.FuncionHeuristica1() == 0) fin = true;
+				if(actual.getHeuristica() == 0) fin = true;
 				
 			}
 		}
@@ -431,7 +431,7 @@ public class GestorSolucion {
 				actual = nuevo;
 				solucionFinal += actual.getMovimiento() + " ";
 				
-				if(actual.FuncionHeuristica1() == 0) fin = true;
+				if(actual.getHeuristica() == 0) fin = true;
 				
 			}
 		}
@@ -472,7 +472,7 @@ public class GestorSolucion {
 				//tfinal = actual;
 				solucionFinal += actual.getMovimiento() + " ";
 				
-				if(actual.FuncionHeuristica1() == 0) fin = true;//TODO porque termina? No entiendo
+				if(actual.getHeuristica() == 0) fin = true;//TODO porque termina? No entiendo
 				
 			}
 		}

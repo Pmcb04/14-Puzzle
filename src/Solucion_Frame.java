@@ -19,7 +19,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
     this.g = g;
     initComponents();
     indexSolucion = 0;
-    jLabel1.setText("Solución " + puzzle + ":");
+    jLabel1.setText("Soluciï¿½n " + puzzle + ":");
     labelSolucion.setText(g.getSolucionFinal());
     labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
     numNodosInt.setText(g.getNumNodos() + "");
@@ -27,41 +27,41 @@ public class Solucion_Frame extends javax.swing.JFrame {
     setBotones();
     setValores();
     ocultarNulos();
-    trozearSolucion();   
+    trozearSolucion();
     printSolucion(puzzle, metodo, resuelto);
     ImageIcon img = new ImageIcon("resources/unex.png");
     setIconImage(img.getImage());
     this.setResizable(true);
     setVisible(true);
   }
-  
-  
+
+
   private void moverNorte(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i-1, j, numero);
   }
-  
+
   private void moverSur(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i+1, j, numero);
   }
-  
+
   private void moverEste(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i,j+1,numero);
   }
-  
+
   private void moverOeste(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i, j-1,numero);
   }
-  
+
   private void accion(String numero, char direccion) {
-	 
+
 	  boolean enc = false;
 	  int i = 0;
 	  int j = 0;
-	  
+
 	  while(i < botones.length && !enc) {
 		  j = 0;
 		  while(j < botones.length && !enc) {
@@ -87,34 +87,34 @@ public class Solucion_Frame extends javax.swing.JFrame {
 	default:
 		break;
 	}
-	  
+
   }
-  
+
   private boolean isLetra(String s) {
 	  if(s.equals("N") || s.equals("S") || s.equals("O") || s.equals("E")) return true;
 	  else return false;
   }
-  
+
   private void printSolucion(String puzzle, String metodo, boolean resuelto) {
-	  
-	  
-	  if(resuelto)  System.out.println("Solución del " + puzzle + " resuelto por el metodo " + metodo + ":");
+
+
+	  if(resuelto)  System.out.println("SoluciÃ³n del " + puzzle + " resuelto por el metodo " + metodo + ":");
 	  else System.out.println("No se a podido resolver el " + puzzle +  " por el metodo " + metodo + " la mejor solucion obtenida a sido:");
-	 
-	  
+
+
 	  for (String s : solucion) System.out.print(s + " ");
-	  
+
 	  System.out.println();
 	  System.out.println();
-	  
+
   }
-  
+
   private void trozearSolucion() {
 	  String[] s = g.getSolucionFinal().replace(" ", "").split("");
 	  int j = 0;
 	  String palabra = "";
 	  int cont = 0;
-	  
+
 	  for (int i = 0; i < s.length; i++) {
 		 if(isLetra(s[i])) {
 			palabra += s[i];
@@ -124,26 +124,26 @@ public class Solucion_Frame extends javax.swing.JFrame {
 			palabra = "";
 		 }else {
 			 palabra += s[i];
-					 
+
 		 }
 	  }
-	  
+
 	  solucion = new String[cont];
-	  for (int i = 0; i < cont; i++) 
+	  for (int i = 0; i < cont; i++)
 		  solucion[i] = s[i];
-		
+
   }
-  
+
   private void mostrar(int i, int j, String numero) {
 	  botones[i][j].setText(numero);
 	  botones[i][j].setBorderPainted(true);
   }
-  
+
   private void ocultar(int i, int j) {
 	  botones[i][j].setText("");
 	  botones[i][j].setBorderPainted(false);
   }
-  
+
   private void ocultarNulos() {
 
     for (int i = 0; i < botones.length; i++) {
@@ -153,19 +153,19 @@ public class Solucion_Frame extends javax.swing.JFrame {
        	  	}
     	 }
     }
-     
-    
+
+
 
   }
-  
-  private void setValores() { 
-	    for (int i = 0; i < g.getTamTablero(); i++) 
-	    	 for (int j = 0; j < g.getTamTablero(); j++) 
-	    		 botones[i][j].setText(g.getValor(i, j) + "");    
+
+  private void setValores() {
+	    for (int i = 0; i < g.getTamTablero(); i++)
+	    	 for (int j = 0; j < g.getTamTablero(); j++)
+	    		 botones[i][j].setText(g.getValor(i, j) + "");
   }
-  
+
   private void setBotones(){
-	  	
+
         botones [0][0] = boton00;
         botones [0][1] = boton01;
         botones [0][2] = boton02;
@@ -323,7 +323,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         numNodosInt1 = new javax.swing.JLabel();
         otro_puzzle = new javax.swing.JButton();
 
-      
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -340,7 +340,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 jToggleButton1MouseClicked(evt);
             }
         });
-      
+
 
         jToggleButton2.setBorderPainted(false);
         jToggleButton2.setIcon(new ImageIcon("resources/flec_izq.png"));
@@ -352,7 +352,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
                 jToggleButton2MouseClicked(evt);
             }
         });
-       
+
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
 
@@ -1263,7 +1263,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Solución:");
+        jLabel1.setText("SoluciÃ³n:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1283,7 +1283,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString.setText("Número de nodos:");
+        numNodosString.setText("NÃºmero de nodos:");
 
         numNodosInt.setBackground(new java.awt.Color(255, 255, 255));
         numNodosInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -1291,7 +1291,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString1.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString1.setText("Tiempo ejecución:");
+        numNodosString1.setText("Tiempo ejecuciÃ³n:");
 
         numNodosInt1.setForeground(new java.awt.Color(255, 255, 255));
         numNodosInt1.setText("23 ns");
@@ -1405,33 +1405,33 @@ public class Solucion_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_otro_puzzleMouseClicked
 
   private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jToggleButton1MouseClicked
-	  
+
 	if(indexSolucion < solucion.length) {
-		
+
 	    char[] s = solucion[indexSolucion].toCharArray();
 	    indexSolucion++;
 	    String numero = "";
-	    for (int i = 0; i < s.length-1; i++) 
+	    for (int i = 0; i < s.length-1; i++)
 			numero += s[i];
 		char direccion = s[s.length-1];
-		
+
 		accion(numero, direccion);
-		
-	}  
-	
+
+	}
+
   }// GEN-LAST:event_jToggleButton1MouseClicked
 
   private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jToggleButton2MouseClicked
-	  
-	  
+
+
 	  if(indexSolucion > 0) {
 		  indexSolucion--;
 		    char[] s = solucion[indexSolucion].toCharArray();
 		    String numero = "";
-		    for (int i = 0; i < s.length-1; i++) 
+		    for (int i = 0; i < s.length-1; i++)
 				numero += s[i];
 			char direccion = s[s.length-1];
-			
+
 			switch (direccion) {
 			case 'N':
 				direccion = 'S';
@@ -1449,12 +1449,12 @@ public class Solucion_Frame extends javax.swing.JFrame {
 			default:
 				break;
 			}
-			
+
 			accion(numero, direccion);
-		  
+
 	  }
-	  
-	
+
+
   }// GEN-LAST:event_jToggleButton2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

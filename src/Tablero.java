@@ -9,11 +9,11 @@ public class Tablero {
 	
 	private final int MAX_TAM = 8;//tam de matriz
 	private final int MAX_MOVIMIENTOS = 4;
-  	private Tablero padre;//para unir los tableros que probablemente formen parte de la solucion
+  	private Tablero padre;//para unir los tableros que formen parte de la solucion
 	private int matrizTablero[][];
 	private int tamTablero;//tamReal del tablero
 	private ArrayList<Nulo> nulos; //para saber la posicion de todos los 0 en cualquier momento
-	private String movimiento;
+	private String movimiento;//Para mostrar el conjunto de movimientos en el futuro
 	private int coste;
 	private int h;
 	private int funcion;
@@ -137,7 +137,7 @@ public class Tablero {
 	/**
      * Elige un movimiento aleatorio
      */
-	public int elegirMovimiento(Nulo n) {
+	public int elegirMovimiento(Nulo n) {//TODO creo que esto no se usa
 		Random r = new Random();
 		return r.nextInt(MAX_MOVIMIENTOS);
 	}
@@ -369,7 +369,7 @@ public class Tablero {
 	public ArrayList<Integer> generarMovimientos() {
 		ArrayList <Integer> movimientos = new ArrayList<Integer>();
 		Integer i = 0;
-		while(i<4) {
+		while(i<MAX_MOVIMIENTOS) {
 			movimientos.add(i);
 			i++;
 		}
@@ -442,6 +442,7 @@ public class Tablero {
 				if(h < mejorh) {
 					enc = true;
 					aux.copy(mejor);
+					mejor.setHeuristica(mejorh);
 				}
 				
 				mov.remove(0);
@@ -509,6 +510,7 @@ public class Tablero {
 					mejorh = h;
 					enc = true;
 					aux.copy(mejor);
+					mejor.setHeuristica(mejorh);
 				}
 				
 				mov.remove(0);
@@ -569,15 +571,18 @@ public class Tablero {
 						mejorh = h;
 						enc = true;
 						aux.copy(mejor);
-						if(h == 0) fin = true;
+						mejor.setHeuristica(mejorh);
+						if(mejorh == 0) fin = true;
 					}else if(h == mejorh && !enc) {
 						mejorh = h;
 						igual = true;
 						aux.copy(mejor);
+						mejor.setHeuristica(mejorh);
 					}else if(h > mejorh && !enc) {
 						mejorh = h;
 						peor = true;
 						aux.copy(mejor);
+						mejor.setHeuristica(mejorh);
 					}
 					
 				}
@@ -825,7 +830,6 @@ public class Tablero {
 		    }
 			
 			nulo.remove(0);
-			copy(aux);
 			
 		}
 	}
@@ -916,7 +920,6 @@ public class Tablero {
 		    }
 			
 			nulo.remove(0);
-			//copy(aux);
 			
 		}
 	}
