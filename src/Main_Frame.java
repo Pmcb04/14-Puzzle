@@ -51,12 +51,16 @@ public class Main_Frame extends javax.swing.JFrame {
         return g;
     }
 
-    private void getSolucion(GestorSolucion g, String algoritmo) {
+    private boolean getSolucion(GestorSolucion g, String algoritmo) {
 
-    	if(algoritmo.equals(jRadioButton1.getText())) g.escaladaSimple();
-    	if(algoritmo.equals(jRadioButton2.getText())) g.escaladaMaximaPendiente();
-    	if(algoritmo.equals(jRadioButton3.getText())) g.algoritmoA();
-    	if(algoritmo.equals(jRadioButton4.getText())) g.escaladaMaximaPendiente1();
+    	boolean fin = false;
+    	
+    	if(algoritmo.equals(jRadioButton1.getText())) fin = g.escaladaSimple();
+    	if(algoritmo.equals(jRadioButton2.getText())) fin = g.escaladaMaximaPendiente();
+    	if(algoritmo.equals(jRadioButton3.getText())) fin = g.algoritmoA();
+    	if(algoritmo.equals(jRadioButton4.getText())) fin = g.escaladaMaximaPendiente1();
+    	
+    	return fin;
 
     }
 
@@ -300,8 +304,8 @@ public class Main_Frame extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         dispose();
     	GestorSolucion g = getPuzzle(jComboBox1.getSelectedItem().toString());
-        getSolucion(g, getRadioSelect().getText());
-        new Solucion_Frame(g,jComboBox1.getSelectedItem().toString(), getRadioSelect().getText());
+        boolean resuelto = getSolucion(g, getRadioSelect().getText());
+        new Solucion_Frame(g,jComboBox1.getSelectedItem().toString(), getRadioSelect().getText(), resuelto);
 
     }//GEN-LAST:event_jButton1MouseClicked
 

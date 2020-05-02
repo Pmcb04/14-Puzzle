@@ -13,7 +13,7 @@ public class GestorSolucion {
 	private int numNodos;//Numero de nodos generados
 	private double tiempoEjecucion;//tiempo de ejcucion del algoritmo
 	private String solucionFinal;//guarda los movimientos que se realizan 
-	private List<Tablero> abiertos; // lista de nodos abiertos
+	private List<Tablero> abiertos;// lista de nodos abiertos
 	private List<Tablero> cerrados; // lista de nodos cerrados
 	private int nodoIgual;
 	private int nodoPeor;
@@ -369,9 +369,6 @@ public class GestorSolucion {
    }
 	
 	
-	
-	
-	
 	public ArrayList<Tablero> addHijo(Tablero t, ArrayList<Tablero> hijos){
 		hijos.add(t);
 		return hijos;
@@ -380,9 +377,9 @@ public class GestorSolucion {
 	/***
 	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
 	 */
-	public void escaladaSimple() {
+	public boolean escaladaSimple() {
 		
-		long initTime = System.nanoTime();//Tiempo inicial
+		long initTime = System.currentTimeMillis();//Tiempo inicial
 		boolean fin = false; 
 		Tablero nuevo = new Tablero(); 
 		Tablero actual = t;
@@ -403,19 +400,21 @@ public class GestorSolucion {
 			}
 		}
 		
-		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
 		
 		setTiempoEjecucion(tiempo);
+		
+		return fin;
 		
 	}
 	
 	/***
 	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
 	 */
-	public void escaladaMaximaPendiente() {
+	public boolean escaladaMaximaPendiente() {
 		
-		long initTime = System.nanoTime();//Tiempo inicial
+		long initTime = System.currentTimeMillis();//Tiempo inicial
 		
 		boolean fin = false;
 		Tablero nuevo = new Tablero();
@@ -437,9 +436,11 @@ public class GestorSolucion {
 			}
 		}
 		
-		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
 		setTiempoEjecucion(tiempo);
+		
+		return fin;
 	
 		
 	}
@@ -451,7 +452,7 @@ public class GestorSolucion {
 	 */
 	public boolean escaladaMaximaPendiente1() {
 		
-		long initTime = System.nanoTime();//Tiempo inicial
+		long initTime = System.currentTimeMillis();//Tiempo inicial
 		
 		boolean fin = false; solucionFinal = "";
 		Tablero nuevo = new Tablero(); Tablero actual = t;
@@ -476,7 +477,7 @@ public class GestorSolucion {
 			}
 		}
 		
-		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
 		setTiempoEjecucion(tiempo);
 		
@@ -485,8 +486,8 @@ public class GestorSolucion {
 	}
 	
 	
-	public void algoritmoA(){
-		long initTime = System.nanoTime();//Tiempo inicial
+	public boolean algoritmoA(){
+		long initTime = System.currentTimeMillis();//Tiempo inicial
 		
 		abiertos = new ArrayList<Tablero>();
 		cerrados = new ArrayList<Tablero>();
@@ -526,9 +527,11 @@ public class GestorSolucion {
 		}
 		
 				
-		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
 		setTiempoEjecucion(tiempo);
+		
+		return fin;
 	}
 	
 }

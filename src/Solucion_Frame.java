@@ -15,7 +15,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
   /**
    * Creates new form Solucion_Frame
    */
-  public Solucion_Frame(GestorSolucion g, String puzzle, String metodo) {
+  public Solucion_Frame(GestorSolucion g, String puzzle, String metodo, boolean resuelto) {
     this.g = g;
     initComponents();
     indexSolucion = 0;
@@ -23,12 +23,12 @@ public class Solucion_Frame extends javax.swing.JFrame {
     labelSolucion.setText(g.getSolucionFinal());
     labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
     numNodosInt.setText(g.getNumNodos() + "");
-    numNodosInt1.setText(String.format("%.0f",g.getTiempoEjecucion())+ " ns");
+    numNodosInt1.setText(String.format("%.0f",g.getTiempoEjecucion())+ " ms");
     setBotones();
     setValores();
     ocultarNulos();
     trozearSolucion();   
-    printSolucion(puzzle, metodo);
+    printSolucion(puzzle, metodo, resuelto);
     ImageIcon img = new ImageIcon("resources/unex.png");
     setIconImage(img.getImage());
     this.setResizable(true);
@@ -95,15 +95,17 @@ public class Solucion_Frame extends javax.swing.JFrame {
 	  else return false;
   }
   
-  private void printSolucion(String puzzle, String metodo, boolean solucionado) {
+  private void printSolucion(String puzzle, String metodo, boolean resuelto) {
 	  
-	  System.out.println("Solución del " + puzzle + " resuelto por el metodo " + metodo + ":");
+	  
+	  if(resuelto)  System.out.println("Solución del " + puzzle + " resuelto por el metodo " + metodo + ":");
+	  else System.out.println("No se a podido resolver el " + puzzle +  " por el metodo " + metodo + " la mejor solucion obtenida a sido:");
+	 
 	  
 	  for (String s : solucion) System.out.print(s + " ");
 	  
 	  System.out.println();
 	  System.out.println();
-	  
 	  
   }
   

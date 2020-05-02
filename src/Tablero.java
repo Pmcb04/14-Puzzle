@@ -48,7 +48,7 @@ public class Tablero {
 	 */
 	public void setPadre(Tablero t) {
 		padre = t;
-	}
+	} 
 	
 	/**
      * El tamaño del tablero pasa a valer tamTablero
@@ -79,9 +79,9 @@ public class Tablero {
 		this.coste = coste;
 	}
 	
-		public void setFuncion(int heuristica, int coste) {
-			funcion = (int) (1.6*heuristica + 0.4*coste);
-		}
+	public void setFuncion(int heuristica, int coste) {
+		funcion = (int) (1.6*heuristica + 0.4*coste);
+	}
 		
 	
 	/**
