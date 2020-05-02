@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Clase Tablero
- * @author Pedro Miguel Carmona & Ruben Marin Lucas
+ * @author Pedro Miguel Carmona, Ruben Marin Lucas
  *
  */
 public class Tablero {
@@ -38,6 +38,9 @@ public class Tablero {
 
 	/**
 	 * AÃ±adir el valor en la pos i, j de la matriz
+	 * @param valor de la casilla a poner
+	 * @param i posicion i de la casilla a poner el valor
+	 * @param j posicion j de la casilla a poner el valor
 	 */
 	public void setValor(int valor, int i, int j) {
 		matrizTablero[i][j] = valor;
@@ -45,20 +48,24 @@ public class Tablero {
 	
 	/**
 	 * El puntero "padre" del tablero pasa a apuntar al tablero t
+	 * @param t, tablero a poner como padre
 	 */
 	public void setPadre(Tablero t) {
 		padre = t;
 	} 
 	
 	/**
-     * El tamaÃ±o del tablero pasa a valer tamTablero
+     * El tamaño del tablero pasa a valer tamTablero
+     * @param tamTablero, tamaño del tablero
      */
 	public void setTamTablero(int tamTablero) {
 		this.tamTablero = tamTablero;
 	}
 	
 	/**
-     * AÃ±adimos un nuevo nulo en nuestro arraylist con las posiciones i, j que ocupa en 
+     * Añadimos un nuevo nulo en nuestro arraylist con las posiciones i, j que ocupa en 
+     * @param i posicion i del nulo a añadir
+     * @param j posicion j del nulo a añadir
      */
 	public void setNulo(int i, int j) {
 		Nulo n = new Nulo();
@@ -67,18 +74,35 @@ public class Tablero {
 		nulos.add(n);
 	}
 	
+	/**
+	 * Pone el movimiento pasado por parametro en moviemiento
+	 * @param s movimiento a cambiar 
+	 */
 	public void setMovimiento(String s) {
 		movimiento = s;
 	}
 	
+	/**
+	 * Pone la funcion heuristica del tablero
+	 * @param heuristica del tablero
+	 */
 	public void setHeuristica(int heuristica) {
 		h = heuristica;
 	}
 	
+	/**
+	 * pone el coste del tablero
+	 * @param coste del tablero
+	 */
 	public void setCoste(int coste) {
 		this.coste = coste;
 	}
 	
+	/**
+	 * Realiza la funcion para el algoritmo A*
+	 * @param heuristica del tablero
+	 * @param coste del tablero
+	 */
 	public void setFuncion(int heuristica, int coste) {
 		funcion = (int) (1.6*heuristica + 0.4*coste);
 	}
@@ -86,39 +110,68 @@ public class Tablero {
 	
 	/**
      * Obtener el valor de la casilla con pos i, j
+     * @param i posicion i del valor a devolver
+     * @param j posicion j del valor a devolver
+     * @return valor de la casilla
      */
 	public int getValor(int i, int j) {
 		return matrizTablero[i][j];
 	}
 	
 	/**
-     * Obtiene el tamaÃ±o real del tablero
+     * Obtiene el tamaño real del tablero
+     * @return tamaño del tablero
      */
 	public int getTamTablero() {
 		return tamTablero;
 	}
 	
+	/**
+	 * Devuelve el numero de la posicion indicada
+	 * @param pos posicion de la lista de nulos
+	 * @return n nulo de la posicion pos
+	 */
 	public Nulo getNulo(int pos) {
 		Nulo n = nulos.get(pos);
 		return n;
 	}
 	
+	/**
+	 * devuelve el tablero padre 
+	 * @return padre tablero padre del tablero
+	 */
 	public Tablero getPadre() {
 		return padre;
 	}
 
+	/**
+	 * Devuelve el movimiento que se ha hecho el en tablero
+	 * @return movimiento que se a hecho en el tablero
+	 */
 	public String getMovimiento() {
 		return movimiento;
 	}
 	
+	/**
+	 * Devuelve la heuristica del tablero
+	 * @return h del tablero
+	 */
 	public int getHeuristica() {
 		return h;
 	}
 	
+	/**
+	 * Devuelve el coste del tablero
+	 * @return coste del tablero
+	 */
 	public int getCoste() {
 		return coste;
 	}
 	
+	/**
+	 * Devuelve al funcion del tablero
+	 * @return funcion del tablero
+	 */
 	public int getFuncion() {
 		return funcion;
 	}
@@ -126,25 +179,20 @@ public class Tablero {
 
 	
 	/**
-     * Constructor por defecto de objetos de tipo Tablero
-     */
+	 * Elige un nulo random de la lista de nulos
+	 * @return nulo random de la lista de nulos
+	 */
 	public Nulo elegirNulo() {
 		Random r = new Random();
 		Nulo n = nulos.get(r.nextInt(nulos.size()));
 		return n;
 	}
-	
-	/**
-     * Elige un movimiento aleatorio
-     */
-	public int elegirMovimiento(Nulo n) {//TODO creo que esto no se usa
-		Random r = new Random();
-		return r.nextInt(MAX_MOVIMIENTOS);
-	}
+
 	
 	/**
      * Intercambia 0 por su casilla norte y viceversa
-     * La casilla que estÃ¡ al norte del Nulo n es movida al sur 
+     * La casilla que está al norte del Nulo n es movida al sur 
+     * @param n nulo para saber que coordenadas mover
      * @return true si el movimiento se a producido y false en caso contrario
      */
 	public boolean moverNorte(Nulo n) {
@@ -168,6 +216,7 @@ public class Tablero {
 	/**
      * Intercambia 0 por su casilla este y viceversa
      * La casilla que esta al este del Nulo n es movida al oeste
+     * @param n nulo para saber que coordenadas mover
      * @return true si el movimiento se a producido y false en caso contrario     
      */
 	public boolean moverEste(Nulo n) {
@@ -191,6 +240,7 @@ public class Tablero {
 	/**
      * Intercambia 0 por su casilla sur y viceversa
      * La casilla que esta al sur del Nulo n es movida al Norte
+     * @param n nulo para saber que coordenadas mover
      * @return true si el movimiento se a producido y false en caso contrario     
      */
 	public boolean moverSur(Nulo n) {
@@ -215,6 +265,7 @@ public class Tablero {
 	/**
      * Intercambia 0 por su casilla oeste y viceversa
      * La casilla que esta al oeste (siempre que no sea 0) del Nulo n es movida al este
+     * @param n nulo para saber que coordenadas mover
      * @return true si el movimiento se a producido y false en caso contrario     
      */
 	public boolean moverOeste(Nulo n) {
@@ -237,6 +288,8 @@ public class Tablero {
 	
 	/**
      * A partir del numero hallar su posicion i
+     * @param num numero para calcular su posicion i
+     * @return posicion i del tablero
      */
 	public int posi(int num) {
 		int i = num/tamTablero;
@@ -249,6 +302,9 @@ public class Tablero {
 	
 	/**
      * A partir del numero y su posicion i hallar su posicion j 
+     * @param num numero para calcular su posicion j
+     * @param posi posicion i del numero 
+     * @return posicion j del tablero 
      */
 	public int posj(int num, int posi) {
 		return  (num-tamTablero*posi-1);
@@ -257,7 +313,11 @@ public class Tablero {
 	
 	/**
      * Halla la distancia que hay desde la posicion adecuada a la posicion real
-     * 1 -> pos adecuada , 2 -> pos real
+     * 1 - pos adecuada , 2 - pos real
+     * @param i1 posicion i donde esta la casilla
+     * @param j1 posicion j donde esta la casilla
+     * @param i2 posicion i donde deberia estar la casilla resuelto el tablero
+     * @param j2 posicion j donde deberia esta la casilla resuelto el tablero
      * @return distancia entre pos adecuada y pos real
      */
 	public int Hallardistancia(int i1, int j1, int i2, int j2) {
@@ -309,7 +369,9 @@ public class Tablero {
 		
 	}
 	
-	
+	/**
+	 * imprime el tablero, así como su lista de nodos
+	 */
 	public void print() {
 		
 		for(int i = 0; i < tamTablero; i++) {
@@ -360,10 +422,10 @@ public class Tablero {
 		
 	/**
 	 * Genera una secuencia aleatoria de los movimientos para mover el tablero
-	 * 0 -> Norte N
-	 * 1 -> Este E
-	 * 2 -> Oeste 0
-	 * 3 -> Sur S
+	 * 0 - Norte N
+	 * 1 - Este E
+	 * 2 - Oeste 0
+	 * 3 - Sur S
 	 * @return ArrayList lista con la secuencia de movimientos
 	 */
 	public ArrayList<Integer> generarMovimientos() {
@@ -442,7 +504,7 @@ public class Tablero {
 				if(h < mejorh) {
 					enc = true;
 					aux.copy(mejor);
-					mejor.setHeuristica(mejorh);
+					mejor.setHeuristica(h);
 				}
 				
 				mov.remove(0);
@@ -528,8 +590,14 @@ public class Tablero {
 		return mejor;
 	}
 	
-	
-	public Tablero MejorMovimientoEMP1(Tablero mejor, GestorSolucion s) {
+	/**
+	 * Genera el mejorMovimiento en cada paso de la modificacion escalada maxima pendiente, 
+	 * como es modificacion escalada maxima pendiente tiene que ver todos los movimientos posibles y elegir el mejor de todos
+	 * @param mejor tablero mejor hasta el momento
+	 * @param g gestorSolucion para almacenar el numero de nodos generado
+	 * @return Tablero el mejor tablero encontrado con respecto al anterior
+	 */
+	public Tablero MejorMovimientoEMP1(Tablero mejor, GestorSolucion g) {
 		Tablero aux = new Tablero(); copy(aux);
 	    boolean enc = false, fin = false, igual = false, peor = false; int mejorh = this.FuncionHeuristica1();
 	    
@@ -547,25 +615,25 @@ public class Tablero {
 				
 				switch(movimiento) {
 					case 0:
-						if(aux.moverNorte(n)) s.addNodos();
+						if(aux.moverNorte(n)) g.addNodos();
 						break;
 						
 					case 1:
-						if(aux.moverEste(n)) s.addNodos();
+						if(aux.moverEste(n)) g.addNodos();
 						break;
 						
 					case 2:
-						if(aux.moverOeste(n)) s.addNodos();
+						if(aux.moverOeste(n)) g.addNodos();
 						break;
 					
 					case 3:
-						if(aux.moverSur(n)) s.addNodos();
+						if(aux.moverSur(n)) g.addNodos();
 						break;
 			
 				}
 				
-				if(!s.isCerrado(aux)) {//Si no esta repetido
-					int h = aux.FuncionHeuristica1();//TODO habra que modificar
+				if(!g.isCerrado(aux)) {//Si no esta repetido
+					int h = aux.FuncionHeuristica1();
 					
 					if(h < mejorh) {
 						mejorh = h;
@@ -599,17 +667,23 @@ public class Tablero {
 		}
 		
 		if(!enc) {
-			if(igual) s.addNodoIgual();
-			else s.addNodoPeor();
+			if(igual) g.addNodoIgual();
+			else g.addNodoPeor();
 			
-			if(s.getNodoIgual() == 80 && s.getNodoPeor() == 50) mejor = null;
+			if(g.getNodoIgual() == 80 && g.getNodoPeor() == 50) mejor = null;
 		}
 		
-		s.addCerrado(mejor);//Lo añadimos para comprobar que no volverlo a generar
+		g.addCerrado(mejor);//Lo añadimos para comprobar que no volverlo a generar
 		
 		return mejor;
 	}
 	
+	/**
+	 * Genera el mejorMovimiento en cada paso del algoritmo A*, tambien tiene en cuenta los atajos
+	 * como es algoritmo A*, tiene que coger el que que menos f'(n) nos de
+	 * @param g gestorSolucion para almacenar el numero de nodos generado
+	 * @param coste coste a poner al hacer el movimiento nuevo
+	 */
 	public void GenerarMovimientosA1(GestorSolucion g, int coste) {
 		Tablero aux = new Tablero(); 
 		copy(aux); // copiamos el tablero actual
@@ -646,7 +720,7 @@ public class Tablero {
 								aux = new Tablero();
 							}else{
 								
-								if(b1) {//si el tablero estÃ¡ en abiertos, no puede tener hijos, porque no se ha llegado a expandir
+								if(b1) {//si el tablero está en abiertos, no puede tener hijos, porque no se ha llegado a expandir
 									t = g.getRepetidoAbiertos(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
 										g.addNodos();//TODO cuidado que no estamos contando todos
@@ -835,9 +909,10 @@ public class Tablero {
 	}
 	
 	/**
-	 * Genera el mejorMovimiento en cada paso del algoritmo de A*, 
+	 * Genera el mejorMovimiento en cada paso del algoritmo de A*, no tiene en cuenta los atajos
 	 * como es algoritmo A*, tiene que coger el que que menos f'(n) nos de
 	 * @param g gestorSolucion para almacenar el numero de nodos generado
+	 * @param coste coste a poner al hacer el movimiento nuevo
 	 */
 	public void GenerarMovimientosA(GestorSolucion g, int coste) {
 		Tablero aux = new Tablero(); 

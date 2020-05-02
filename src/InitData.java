@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Clase InitData
- * @author Pedro Miguel Carmona & Ruben Marin Lucas
+ * @author Pedro Miguel Carmona, Ruben Marin Lucas
  *
  */
 public class InitData {

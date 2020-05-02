@@ -3,7 +3,7 @@ import javax.swing.JButton;
 
 /**
  * Clase Solucion_Frame
- * @author Pedro Miguel Carmona & Ruben Marin Lucas
+ * @author Pedro Miguel Carmona, Ruben Marin Lucas
  */
 public class Solucion_Frame extends javax.swing.JFrame {
 
@@ -13,13 +13,17 @@ public class Solucion_Frame extends javax.swing.JFrame {
   private GestorSolucion g;
 
   /**
-   * Creates new form Solucion_Frame
+   * Constructor parametrizado de la clase Solucion_Frame
+   * @param g GestorSolucion con el tablero 
+   * @param puzzle puzzle seleccionado por el usuario
+   * @param metodo metodo de resolucion del puzzle
+   * @param resuelto bandera para ver si se a resuelto o no
    */
   public Solucion_Frame(GestorSolucion g, String puzzle, String metodo, boolean resuelto) {
     this.g = g;
     initComponents();
     indexSolucion = 0;
-    jLabel1.setText("Soluciï¿½n " + puzzle + ":");
+    jLabel1.setText("Solución " + puzzle + ":");
     labelSolucion.setText(g.getSolucionFinal());
     labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
     numNodosInt.setText(g.getNumNodos() + "");
@@ -35,27 +39,55 @@ public class Solucion_Frame extends javax.swing.JFrame {
     setVisible(true);
   }
 
-
+  /***
+   * Mueve a el norte el numero pasado por parametro
+   * @param numero numero que se va a mover
+   * @param i posicion i del numero que se va a mover
+   * @param j posicion j del numero que se va a mover
+   */
   private void moverNorte(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i-1, j, numero);
   }
 
+  /***
+   * Mueve a el sur el numero pasado por parametro
+   * @param numero numero que se va a mover
+   * @param i posicion i del numero que se va a mover
+   * @param j posicion j del numero que se va a mover
+   */
   private void moverSur(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i+1, j, numero);
   }
 
+  /***
+   * Mueve a el este el numero pasado por parametro
+   * @param numero numero que se va a mover
+   * @param i posicion i del numero que se va a mover
+   * @param j posicion j del numero que se va a mover
+   */
   private void moverEste(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i,j+1,numero);
   }
 
+  /***
+   * Mueve a el oeste el numero pasado por parametro
+   * @param numero numero que se va a mover
+   * @param i posicion i del numero que se va a mover
+   * @param j posicion j del numero que se va a mover
+   */
   private void moverOeste(String numero, int i, int j) {
 	  ocultar(i,j);
 	  mostrar(i, j-1,numero);
   }
 
+  /***
+   * Decide la accion que se va a realizar
+   * @param numero numero que se va a mover
+   * @param direccion direccion a la que el numero se va a mover
+   */
   private void accion(String numero, char direccion) {
 
 	  boolean enc = false;
@@ -90,15 +122,26 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
   }
 
+  /**
+   * Devuelve si el String pasado por parametro es una direccion cardinal
+   * @param s string a inspeccionar si es una direccion cardinal
+   * @return true en caso de ser una direccion cardinal, false en caso contrario
+   */
   private boolean isLetra(String s) {
 	  if(s.equals("N") || s.equals("S") || s.equals("O") || s.equals("E")) return true;
 	  else return false;
   }
 
+  /**
+   * Imprime la solucion si se a resuelto, o parte de ella si no
+   * @param puzzle puzzle que se a intentado resolver
+   * @param metodo metodo por el cual se a intentado resolver
+   * @param resuelto bandera que dice si se a resuelto o no
+   */
   private void printSolucion(String puzzle, String metodo, boolean resuelto) {
 
 
-	  if(resuelto)  System.out.println("SoluciÃ³n del " + puzzle + " resuelto por el metodo " + metodo + ":");
+	  if(resuelto)  System.out.println("Solución del " + puzzle + " resuelto por el metodo " + metodo + ":");
 	  else System.out.println("No se a podido resolver el " + puzzle +  " por el metodo " + metodo + " la mejor solucion obtenida a sido:");
 
 
@@ -109,6 +152,9 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
   }
 
+  /**
+   * trozea la solucion y la divide en casillas donde cada casilla es el numero a mover y la direccion a la que mover
+   */
   private void trozearSolucion() {
 	  String[] s = g.getSolucionFinal().replace(" ", "").split("");
 	  int j = 0;
@@ -134,16 +180,30 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
   }
 
+  /**
+   * muestra un numero en pantalla en el tablero 
+   * @param i posicion i del numero a mostrar en el tablero
+   * @param j posicion j del numero a mostrar en el tablero
+   * @param numero numero a mostrar en el tablero
+   */
   private void mostrar(int i, int j, String numero) {
 	  botones[i][j].setText(numero);
 	  botones[i][j].setBorderPainted(true);
   }
 
+  /**
+   * oculta un numero en pantalla en el tablero
+   * @param i posicion i del numero a ocultar en el tablero
+   * @param j posicion j del numero a ocultar en el tablero
+   */
   private void ocultar(int i, int j) {
 	  botones[i][j].setText("");
 	  botones[i][j].setBorderPainted(false);
   }
 
+  /**
+   * oculta todos aquellas posiciones del tablero que son nulas (que tengan como numero un 0)
+   */
   private void ocultarNulos() {
 
     for (int i = 0; i < botones.length; i++) {
@@ -158,12 +218,18 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
   }
 
+  /**
+   * Pone los valores de cada casilla del tablero 
+   */
   private void setValores() {
 	    for (int i = 0; i < g.getTamTablero(); i++)
 	    	 for (int j = 0; j < g.getTamTablero(); j++)
 	    		 botones[i][j].setText(g.getValor(i, j) + "");
   }
 
+  /**
+   * acumula todos las casillas en una matriz para su facil manejo
+   */
   private void setBotones(){
 
         botones [0][0] = boton00;
@@ -358,7 +424,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 36)); // NOI18N
         labelSolucion.setForeground(new java.awt.Color(255, 255, 255));
-        labelSolucion.setText("7N 3O 5E");
+        labelSolucion.setText("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1263,7 +1329,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("SoluciÃ³n:");
+        jLabel1.setText("Solución:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1283,18 +1349,18 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString.setText("NÃºmero de nodos:");
+        numNodosString.setText("Número de nodos:");
 
         numNodosInt.setBackground(new java.awt.Color(255, 255, 255));
         numNodosInt.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosInt.setText("33");
+        numNodosInt.setText("");
 
         numNodosString1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString1.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString1.setText("Tiempo ejecuciÃ³n:");
+        numNodosString1.setText("Tiempo ejecución:");
 
         numNodosInt1.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosInt1.setText("23 ns");
+        numNodosInt1.setText("");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1399,11 +1465,19 @@ public class Solucion_Frame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Accion al pulsar el boton ELEGIR OTRO PUZZLE
+     * @param evt evento de pulsacion del raton 
+     */
     private void otro_puzzleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_otro_puzzleMouseClicked
         dispose();
         new Main_Frame();
     }//GEN-LAST:event_otro_puzzleMouseClicked
 
+    /***
+     * Accion a realizar al pulsar la flecha derecha con el raton
+     * @param evt evento de pulsacion del raton
+     */
   private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jToggleButton1MouseClicked
 
 	if(indexSolucion < solucion.length) {
@@ -1421,6 +1495,10 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
   }// GEN-LAST:event_jToggleButton1MouseClicked
 
+  /**
+   * accion a realizar al pulsar la flecha izquierda con el raton
+   * @param evt evento de pulsacion del raton
+   */
   private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jToggleButton2MouseClicked
 
 

@@ -1,4 +1,3 @@
-import java.util.logging.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -10,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  * Clase Info_Frame
- * @author Pedro Miguel Carmona & Ruben Marin Lucas
+ * @author Pedro Miguel Carmona, Ruben Marin Lucas
  */
 public class Info_Frame extends JFrame {
 

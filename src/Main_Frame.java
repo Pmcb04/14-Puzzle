@@ -7,7 +7,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * Clase Main_Frame
- * @author Pedro Miguel Carmona & Ruben Marin Lucas
+ * @author Pedro Miguel Carmona, Ruben Marin Lucas
  */
 public class Main_Frame extends javax.swing.JFrame {
 
@@ -32,6 +32,10 @@ public class Main_Frame extends javax.swing.JFrame {
         setVisible(true);
     }
 
+    /**
+     * Mira cual es el JRadioButton seleccionado en el JGroupButtom
+     * @return JRadioButton seleccionado por el usuario    
+     */
     private JRadioButton getRadioSelect(){
        for (Enumeration e=buttonGroup1.getElements(); e.hasMoreElements(); )
         {
@@ -45,12 +49,23 @@ public class Main_Frame extends javax.swing.JFrame {
         return null;
     }
 
+    /**
+     * del puzzle seleccionado se carga del fichero y se almacena en un gestorSolucion
+     * @param puzzle puzzle seleccionado por el usuario
+     * @return GestorSolucion cargado con el puzzle seleccionado
+     */
     private GestorSolucion getPuzzle(String puzzle){
     	GestorSolucion g = new GestorSolucion();
         new InitData(g, puzzle);
         return g;
     }
 
+    /**
+     * Devuelve la solucion al puzzle seleccionado por el usuario, por el metodo elegido
+     * @param g GestorSolucion con el puzzle elegido 
+     * @param algoritmo metodo a resolver el puzzle elegido
+     * @return true en caso de haber hallado una solucion al puzzle, false en caso contrario
+     */
     private boolean getSolucion(GestorSolucion g, String algoritmo) {
 
     	boolean fin = false;
@@ -301,6 +316,10 @@ public class Main_Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    /***
+     * Accion al pulsar el boton START
+     * @param evt evento de haber pulsado el boton
+     */
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         dispose();
     	GestorSolucion g = getPuzzle(jComboBox1.getSelectedItem().toString());

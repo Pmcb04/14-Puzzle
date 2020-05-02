@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Clase GestorSolucion
- * @author Pedro Miguel Carmona & Ruben Marin Lucas
+ * @author Pedro Miguel Carmona, Ruben Marin Lucas
  *
  */
 public class GestorSolucion {
@@ -39,8 +38,8 @@ public class GestorSolucion {
 	}
 	
 	/***
-	 * Introduce el tramaÃ±o del tablero en el GestoSolucion
-	 * @param tamtablero tamaÃ±o del tablero a tratar
+	 * Introduce el tamaño del tablero en el GestoSolucion
+	 * @param tamTablero tamaño del tablero a tratar
 	 */
 	public void setTamTablero(int tamTablero) {
 		this.t.setTamTablero(tamTablero); 
@@ -75,7 +74,7 @@ public class GestorSolucion {
 	
 	/***
 	 * Introduce un nuevo tiempo de ejecucion en el GestorSolucion
-	 * @param teimpoEjecucion Nuevo tiempo de ejecucion para el GestorSolucion
+	 * @param tiempoEjecucion Nuevo tiempo de ejecucion para el GestorSolucion
 	 */
 	public void setTiempoEjecucion(double tiempoEjecucion) {
 		this.tiempoEjecucion = tiempoEjecucion;
@@ -117,6 +116,7 @@ public class GestorSolucion {
 	 * Devuelve el valor de la casilla (i,j) en el tablero t
 	 * @param i fila a devolver el valor
 	 * @param j columna a devolver el valor
+	 * @return valor de la casilla seleccionada
 	 */
 	public int getValor(int i, int j) {
 		return t.getValor(i, j);  
@@ -147,10 +147,18 @@ public class GestorSolucion {
 		return solucionFinal;
 	}
 	
+	/**
+	 * retorna el numero de nodos iguales
+	 * @return nodoigual numero de nodos iguales
+	 */
 	public int getNodoIgual() {
 		return nodoIgual;
 	}
 	
+	/***
+	 * retorna el numero de nodos peores
+	 * @return nodoPeor numero de nodos peores
+	 */
 	public int getNodoPeor() {
 		return nodoPeor;
 	}
@@ -162,10 +170,16 @@ public class GestorSolucion {
 		numNodos++;
 	}
 	
+	/**
+	 * Incrementa la cifra de numero de nodos iguales en uno
+	 */
 	public void addNodoIgual() {
 		nodoIgual++;
 	}
 	
+	/**
+	 * Incrementa la cifra de numero de nodos peores en uno
+	 */
 	public void addNodoPeor() {
 		nodoPeor++;
 	}
@@ -186,6 +200,10 @@ public class GestorSolucion {
 		cerrados.add(t);
 	}
 	
+	/**
+	 * Devuelve el tablero que esta en primera posicion de la lista abiertos
+	 * @return Tablero en primera posicion de la lista abiertos
+	 */
 	public Tablero primerAbierto() {
 		return abiertos.get(0);
 
@@ -206,6 +224,11 @@ public class GestorSolucion {
 		Collections.sort(abiertos, new FuncionComparator());
 	}
 	
+	/**
+	 * Comprueba si el tablero pasado por parametro se encuentra en la lista cerrados
+	 * @param t tablero a comprobar si esta en la lista cerrados
+	 * @return true en caso de que se encuentre en la lista, false en caso contrario
+	 */
 	public boolean isCerrado(Tablero t) {
 		
 		int i = 0;
@@ -235,6 +258,11 @@ public class GestorSolucion {
 		
 	}
 	
+	/**
+	 * Comprueba si el tablero pasado por parametro se encuentra en la lista abiertos
+	 * @param t tablero a comprobar si esta en la lista abiertos
+	 * @return true en caso que se encuentre en la lsita, false en caso contrario
+	 */
 	public boolean isAbierto(Tablero t) {
 		
 		int i = 0;
@@ -264,7 +292,11 @@ public class GestorSolucion {
 		
 	}
 	
-		//Devuelve el tablero repetido
+	/**
+	 * Devuelve el tablero repetido en la lista de abiertos
+	 * @param t tablero a comprobar el repetido
+	 * @return Tablero repetido en la lista abiertos
+	 */
 	public Tablero getRepetidoAbiertos(Tablero t) {
 		
 		int i = 0;
@@ -293,6 +325,11 @@ public class GestorSolucion {
 		return aux;	
 	}
 	
+	/**
+	 * Devuelve el tablero repetido en la lista de abiertos
+	 * @param t tablero a comprobar el repetido
+	 * @return Tablero repetido en la lista cerrados
+	 */
 	public Tablero getRepetidoCerrados(Tablero t) {
 		
 		int i = 0;
@@ -321,7 +358,11 @@ public class GestorSolucion {
 		return aux;	
 	}
 	
-	//Numero de nodos en abiertos y cerrados que tienen como padre a t
+	/**
+	 * Devuelve el numero de hijos que tiene el tablero parado por parametro
+	 * @param t tablero a saber cuantos hijos tiene
+	 * @return numHijos del tablero 
+	 */
 	public int numHijos(Tablero t) {
 		int num = 0;
 		int i = 0; Tablero aux;
@@ -334,6 +375,11 @@ public class GestorSolucion {
 		return num;
 	}
 	
+	/**
+	 * El objetivo de ese metodo es hallar todos los hijos del tablero que se encuentra en primera posicion de ese conjunto
+	 * @param hijos lista con los hijos repetidos 
+	 * @return lista con los hijos en primera posicion del conjunto
+	 */
 	 public ArrayList<Tablero> Busqueda(ArrayList<Tablero> hijos){
 		Tablero t = hijos.get(0);
 		hijos.remove(0);
@@ -368,14 +414,20 @@ public class GestorSolucion {
 	 return hijos;
    }
 	
-	
+	/**
+	 * Suma el tablero pasado por parametro a la lista hijos
+	 * @param t tablero a añadir a la lista hijos
+	 * @param hijos lista para añadir
+	 * @return lista con el tablero añadido 
+	 */
 	public ArrayList<Tablero> addHijo(Tablero t, ArrayList<Tablero> hijos){
 		hijos.add(t);
 		return hijos;
 	}
 	
-	/***
-	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
+	/**
+	 *  Realiza el algoritmo de escalada de escalada de maxima pendiente
+	 * @return fin, true en caso de haber encontrado una solucion, false en caso contrario
 	 */
 	public boolean escaladaSimple() {
 		
@@ -394,10 +446,10 @@ public class GestorSolucion {
 				nuevo.setPadre(actual);
 				actual = nuevo;
 				solucionFinal += actual.getMovimiento() + " ";
-				
 				if(actual.getHeuristica() == 0) fin = true;
-				
 			}
+			
+			
 		}
 		
 		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
@@ -410,7 +462,8 @@ public class GestorSolucion {
 	}
 	
 	/***
-	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
+	 * Realiza el algoritmo de escalada de escalada de maxima pendiente 
+	 * @return fin, true en caso de haber encontrado una solucion, false en caso contrario
 	 */
 	public boolean escaladaMaximaPendiente() {
 		
@@ -447,8 +500,8 @@ public class GestorSolucion {
 	
 	
 	/***
-	 * Realiza el algoritmo de escalada de escalada de maxima pendiente y si resuelve el puzzle retorna true
-	 * @return fin
+	 * Realiza una modificacion del algoritmo de escalada de escalada de maxima pendiente
+	 * @return fin, true en caso de haber encontrado una solucion, false en caso contrario
 	 */
 	public boolean escaladaMaximaPendiente1() {
 		
@@ -485,7 +538,10 @@ public class GestorSolucion {
 		
 	}
 	
-	
+	/***
+	 * Realiza el añgoritmo de A*
+	 * @return fin, true en caso de haber encontrado una solucion, false en caso contrario
+	 */
 	public boolean algoritmoA(){
 		long initTime = System.currentTimeMillis();//Tiempo inicial
 		
