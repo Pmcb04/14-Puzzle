@@ -11,6 +11,7 @@ import javax.swing.JFrame;
  * Clase Info_Frame
  * @author Pedro Miguel Carmona, Ruben Marin Lucas
  */
+@SuppressWarnings("serial")
 public class Info_Frame extends JFrame {
 
     /**

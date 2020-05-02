@@ -5,6 +5,7 @@ import javax.swing.JButton;
  * Clase Solucion_Frame
  * @author Pedro Miguel Carmona, Ruben Marin Lucas
  */
+@SuppressWarnings("serial")
 public class Solucion_Frame extends javax.swing.JFrame {
 
   private JButton [][] botones = new JButton[8][8];
@@ -308,7 +309,6 @@ public class Solucion_Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
@@ -1606,7 +1606,6 @@ public class Solucion_Frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;

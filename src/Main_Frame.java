@@ -9,6 +9,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  * Clase Main_Frame
  * @author Pedro Miguel Carmona, Ruben Marin Lucas
  */
+@SuppressWarnings("serial")
 public class Main_Frame extends javax.swing.JFrame {
 
     /**
@@ -37,7 +38,8 @@ public class Main_Frame extends javax.swing.JFrame {
      * @return JRadioButton seleccionado por el usuario    
      */
     private JRadioButton getRadioSelect(){
-       for (Enumeration e=buttonGroup1.getElements(); e.hasMoreElements(); )
+       for (@SuppressWarnings("rawtypes")
+	Enumeration e=buttonGroup1.getElements(); e.hasMoreElements(); )
         {
             JRadioButton b = (JRadioButton)e.nextElement();
             if (b.getModel() == buttonGroup1.getSelection())
