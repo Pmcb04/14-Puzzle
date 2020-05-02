@@ -442,7 +442,7 @@ public class Tablero {
 				if(h < mejorh) {
 					enc = true;
 					aux.copy(mejor);
-					mejor.setHeuristica(mejorh);
+					mejor.setHeuristica(h);
 				}
 				
 				mov.remove(0);
