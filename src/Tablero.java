@@ -369,7 +369,7 @@ public class Tablero {
 	public ArrayList<Integer> generarMovimientos() {
 		ArrayList <Integer> movimientos = new ArrayList<Integer>();
 		Integer i = 0;
-		while(i<4) {
+		while(i<MAX_MOVIMIENTOS) {
 			movimientos.add(i);
 			i++;
 		}
