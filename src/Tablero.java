@@ -137,7 +137,7 @@ public class Tablero {
 	/**
      * Elige un movimiento aleatorio
      */
-	public int elegirMovimiento(Nulo n) {
+	public int elegirMovimiento(Nulo n) {//TODO creo que esto no se usa
 		Random r = new Random();
 		return r.nextInt(MAX_MOVIMIENTOS);
 	}
