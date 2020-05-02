@@ -95,7 +95,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 	  else return false;
   }
   
-  private void printSolucion(String puzzle, String metodo, boolean solucionado) {
+  private void printSolucion(String puzzle, String metodo) {
 	  
 	  System.out.println("Solución del " + puzzle + " resuelto por el metodo " + metodo + ":");
 	  
