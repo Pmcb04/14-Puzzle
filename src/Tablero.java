@@ -672,7 +672,7 @@ public class Tablero {
 			if(igual) g.addNodoIgual();
 			else g.addNodoPeor();
 			
-			if(g.getNodoIgual() == 80 && g.getNodoPeor() == 50) mejor = null;
+			if(g.getNodoIgual() >= 40 || g.getNodoPeor() >= 25) mejor = null;
 		}
 		
 		g.addCerrado(mejor);//Lo añadimos para comprobar que no se vuelve a generar
