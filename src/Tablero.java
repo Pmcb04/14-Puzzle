@@ -754,6 +754,7 @@ public class Tablero {
 						
 					case 1:
 						if(aux.moverEste(n)) {
+							g.addNodos();
 							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
 							
 							aux.setHeuristica(aux.FuncionHeuristica1());
