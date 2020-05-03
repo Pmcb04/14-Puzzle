@@ -708,6 +708,7 @@ public class Tablero {
 				switch(movimiento) {
 					case 0:
 						if(aux.moverNorte(n)) {
+							g.addNodos();
 							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
 							
 							aux.setHeuristica(aux.FuncionHeuristica1());
@@ -716,7 +717,6 @@ public class Tablero {
 							
 							if(!b0 &&  !b1){
 								aux.setPadre(this);
-								g.addNodos();
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
 								aux = new Tablero();
@@ -725,7 +725,6 @@ public class Tablero {
 								if(b1) {//si el tablero está en abiertos, no puede tener hijos, porque no se ha llegado a expandir
 									t = g.getRepetidoAbiertos(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();//TODO cuidado que no estamos contando todos
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -736,7 +735,6 @@ public class Tablero {
 								}else {
 									t = g.getRepetidoCerrados(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -764,7 +762,6 @@ public class Tablero {
 							
 							if(!b0 &&  !b1){
 								aux.setPadre(this);
-								g.addNodos();
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
 								aux = new Tablero();
@@ -773,7 +770,6 @@ public class Tablero {
 								if(b1) {
 									t = g.getRepetidoAbiertos(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -784,7 +780,6 @@ public class Tablero {
 								}else {
 									t = g.getRepetidoCerrados(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -804,6 +799,7 @@ public class Tablero {
 						
 					case 2:
 						if(aux.moverOeste(n)) {
+							g.addNodos();
 							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
 							
 							aux.setHeuristica(aux.FuncionHeuristica1());
@@ -812,7 +808,6 @@ public class Tablero {
 							
 							if(!b0 &&  !b1){
 								aux.setPadre(this);
-								g.addNodos();
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
 								aux = new Tablero();
@@ -821,7 +816,6 @@ public class Tablero {
 								if(b1) {
 									t = g.getRepetidoAbiertos(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -832,7 +826,6 @@ public class Tablero {
 								}else {
 									t = g.getRepetidoCerrados(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -852,6 +845,7 @@ public class Tablero {
 					
 					case 3:
 						if(aux.moverSur(n)) {
+							g.addNodos();
 							b0 = g.isCerrado(aux); b1 = g.isAbierto(aux);
 							
 							aux.setHeuristica(aux.FuncionHeuristica1());
@@ -860,7 +854,6 @@ public class Tablero {
 							
 							if(!b0 &&  !b1){
 								aux.setPadre(this);
-								g.addNodos();
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
 								aux = new Tablero();
@@ -869,7 +862,6 @@ public class Tablero {
 								if(b1) {
 									t = g.getRepetidoAbiertos(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
@@ -880,7 +872,6 @@ public class Tablero {
 								}else {
 									t = g.getRepetidoCerrados(aux);
 									if(aux.getFuncion() < t.getFuncion()) {
-										g.addNodos();
 										t.setHeuristica(aux.getHeuristica());
 										t.setCoste(coste);
 										t.setFuncion(aux.getHeuristica(), coste);
