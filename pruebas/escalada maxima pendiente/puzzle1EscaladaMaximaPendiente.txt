@@ -1001,9 +1001,9 @@
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Tiempo medio empleado: 31000.0 ns 
-Nodos generados media: 39 
-Numero movimientos media: 6 
-Nº resueltos: 1000 
-Nº no resueltos: 0
+Tiempo medio empleado: 31000.0 ns
+Nodos generados media: 39
+Numero movimientos media: 6
+Nï¿½ resueltos: 1000
+Nï¿½ no resueltos: 0
 ---------------------------------------------------------------------------------------------------------------------------------------------
