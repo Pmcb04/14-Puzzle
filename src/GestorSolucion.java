@@ -527,7 +527,7 @@ public class GestorSolucion {
 		
 		cerrados = new ArrayList<Tablero>();
 		
-		while(nuevo != null && nodoIgual < 80 && nodoPeor < 50 && !fin) {
+		while(nuevo != null && !fin) {
 			
 			nuevo = new Tablero();
 			nuevo = actual.MejorMovimientoEMP1(nuevo, this);

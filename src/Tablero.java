@@ -648,7 +648,7 @@ public class Tablero {
 						igual = true;
 						aux.copy(mejor);
 						mejor.setHeuristica(mejorh);
-					}else if(h > mejorh && !enc) {
+					}else if(h > mejorh && !enc && !igual) {
 						mejorh = h;
 						peor = true;
 						aux.copy(mejor);
@@ -675,7 +675,7 @@ public class Tablero {
 			if(g.getNodoIgual() == 80 && g.getNodoPeor() == 50) mejor = null;
 		}
 		
-		g.addCerrado(mejor);//Lo añadimos para comprobar que no volverlo a generar
+		g.addCerrado(mejor);//Lo añadimos para comprobar que no se vuelve a generar
 		
 		return mejor;
 	}
