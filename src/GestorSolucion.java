@@ -445,7 +445,8 @@ public class GestorSolucion {
 		long initTime = System.currentTimeMillis();//Tiempo inicial
 		boolean fin = false; 
 		Tablero nuevo = new Tablero(); 
-		Tablero actual = t;
+		Tablero actual = t; 
+		actual.setHeuristica(actual.FuncionHeuristica1());
 		
 		while(nuevo != null && !fin) {
 			
@@ -483,6 +484,7 @@ public class GestorSolucion {
 		boolean fin = false;
 		Tablero nuevo = new Tablero();
 		Tablero actual = t;
+		actual.setHeuristica(actual.FuncionHeuristica1());
 		
 		while(nuevo != null && !fin) {
 			
@@ -520,6 +522,7 @@ public class GestorSolucion {
 		
 		boolean fin = false; solucionFinal = "";
 		Tablero nuevo = new Tablero(); Tablero actual = t;
+		actual.setHeuristica(actual.FuncionHeuristica1());
 		nodoIgual = 0; nodoPeor = 0;
 		
 		cerrados = new ArrayList<Tablero>();

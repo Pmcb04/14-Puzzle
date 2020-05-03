@@ -466,7 +466,7 @@ public class Tablero {
 		Tablero aux = new Tablero(); 
 		copy(aux); 
 	    boolean enc = false;
-	    int mejorh = this.FuncionHeuristica1();
+	    int mejorh = this.getHeuristica();
 	    
 		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeors que representan los nulos
 		
@@ -533,7 +533,7 @@ public class Tablero {
 		Tablero aux = new Tablero(); 
 		copy(aux); 
 	    boolean enc = false; 
-	    int mejorh = this.FuncionHeuristica1();
+	    int mejorh = this.getHeuristica();
 	    
 		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeros que representan los nulos
 		
@@ -600,7 +600,8 @@ public class Tablero {
 	public Tablero MejorMovimientoEMP1(Tablero mejor, GestorSolucion g) {
 		Tablero aux = new Tablero(); copy(aux);
 	    @SuppressWarnings("unused")
-		boolean enc = false, fin = false, igual = false, peor = false; int mejorh = this.FuncionHeuristica1();
+		boolean enc = false, fin = false, igual = false, peor = false; 
+	    int mejorh = this.getHeuristica();
 	    
 		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeors que representan los nulos
 		
