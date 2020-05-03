@@ -668,14 +668,17 @@ public class Tablero {
 			
 		}
 		
+		
+		
 		if(!enc) {
 			if(igual) g.addNodoIgual();
-			else g.addNodoPeor();
-			
-			if(g.getNodoIgual() == 80 && g.getNodoPeor() == 50) mejor = null;
+			else g.addNodoPeor();	
 		}
 		
 		g.addCerrado(mejor);//Lo añadimos para comprobar que no se vuelve a generar
+		
+		if(g.getNodoIgual() >= 40 || g.getNodoPeor() >= 25) mejor = null;
+
 		
 		return mejor;
 	}

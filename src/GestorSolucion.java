@@ -442,7 +442,7 @@ public class GestorSolucion {
 	 */
 	public boolean escaladaSimple() {
 		
-		long initTime = System.currentTimeMillis();//Tiempo inicial
+		long initTime = System.nanoTime();//Tiempo inicial
 		boolean fin = false; 
 		Tablero nuevo = new Tablero(); 
 		Tablero actual = t; 
@@ -464,7 +464,7 @@ public class GestorSolucion {
 			
 		}
 		
-		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en ejcutar el algoritmo
 		
 		setTiempoEjecucion(tiempo);
@@ -479,7 +479,7 @@ public class GestorSolucion {
 	 */
 	public boolean escaladaMaximaPendiente() {
 		
-		long initTime = System.currentTimeMillis();//Tiempo inicial
+		long initTime = System.nanoTime();//Tiempo inicial
 		
 		boolean fin = false;
 		Tablero nuevo = new Tablero();
@@ -502,7 +502,7 @@ public class GestorSolucion {
 			}
 		}
 		
-		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
 		setTiempoEjecucion(tiempo);
 		
@@ -523,7 +523,6 @@ public class GestorSolucion {
 		boolean fin = false; solucionFinal = "";
 		Tablero nuevo = new Tablero(); Tablero actual = t;
 		actual.setHeuristica(actual.FuncionHeuristica1());
-		nodoIgual = 0; nodoPeor = 0;
 		
 		cerrados = new ArrayList<Tablero>();
 		

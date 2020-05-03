@@ -143,7 +143,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
 
 	  if(resuelto)  System.out.println("Solución del " + puzzle + " resuelto por el método " + metodo + ":");
-	  else System.out.println("No se ha podido resolver el " + puzzle +  " por el método " + metodo + " la mejor solución obtenida ha sido:");
+	  else System.out.println("No se ha podido resolver el " + puzzle +  " por el método " + metodo + " la mejor solución obtenida a sido:");
 
 
 	  for (String s : solucion) System.out.print(s + " ");
