@@ -58,8 +58,8 @@ public class Pruebas {
 				nodos = gs.getNumNodos();
 				numNodos += nodos;
 				
-				if(!abreviatura.equals("A*") && !abreviatura.equals("MEMP")) tiempo = gs.getTiempoEjecucion()*1000000;
-				else tiempo = gs.getTiempoEjecucion();
+				if(!abreviatura.equals("A*") && !abreviatura.equals("MEMP")) tiempo = gs.getTiempoEjecucion()*1000000; // para pasarlo a nanoSegundos
+				else tiempo = gs.getTiempoEjecucion(); // lo dejamos en miliSegundos
 				tiempoTotal += tiempo;
 				
 				trozearSolucion(gs);
@@ -74,8 +74,8 @@ public class Pruebas {
 			
 			log.print("\n");
 			log.print("---------------------------------------------------------------------------------------------------------------------------------------------");
-			if(!abreviatura.equals("A*") && !abreviatura.equals("MEMP")) log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " ns \nNodos generados media: " + numNodos/numPruebas + " \nNumero movimientos media: " + numMovimientos/numPruebas + " \nNº resueltos: " + numResultos + " \nNº no resueltos: " + numNoResueltos);
-			else log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " ms \nNodos generados media: " + numNodos/numPruebas + " \nNumero movimientos media: " + numMovimientos/numPruebas + " \nNº resueltos: " + numResultos + " \nNº no resueltos: " + numNoResueltos);
+			if(!abreviatura.equals("A*") && !abreviatura.equals("MEMP")) log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " ns \nNodos generados media: " + numNodos/numPruebas + " \nNumero movimientos media: " + numMovimientos/numPruebas + " \nNï¿½ resueltos: " + numResultos + " \nNï¿½ no resueltos: " + numNoResueltos);
+			else log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " ms \nNodos generados media: " + numNodos/numPruebas + " \nNumero movimientos media: " + numMovimientos/numPruebas + " \nNï¿½ resueltos: " + numResultos + " \nNï¿½ no resueltos: " + numNoResueltos);
 			log.print("---------------------------------------------------------------------------------------------------------------------------------------------");
 
 			

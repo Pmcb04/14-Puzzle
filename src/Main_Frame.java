@@ -175,7 +175,23 @@ public class Main_Frame extends javax.swing.JFrame {
         );
 
         jComboBox1.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Puzzle 1", "Puzzle 2", "Puzzle 3", "Puzzle 4", "Puzzle 5", "Puzzle 6", "Puzzle 7", "Puzzle 8", "Puzzle 9", "Puzzle 10" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { 
+        		"Puzzle 1 (4x4)", 
+        		"Puzzle 2 (4x4)", 
+        		"Puzzle 3 (4x4)", 
+        		"Puzzle 4 (4x4)", 
+        		"Puzzle 5 (4x4)", 
+        		"Puzzle 6 (4x4)", 
+        		"Puzzle 7 (4x4)", 
+        		"Puzzle 8 (4x4)", 
+        		"Puzzle 9 (4x4)", 
+        		"Puzzle 10 (4x4)",
+        		"Puzzle 11 (5x5)", 
+        		"Puzzle 12 (5x5)",
+        		"Puzzle 13 (6x6)",
+        		"Puzzle 14 (7x7)",
+        		"Puzzle 15 (8x8)"
+        }));
         jComboBox1.setToolTipText("");
         jComboBox1.setBorder(null);
         jComboBox1.setKeySelectionManager(null);
@@ -257,7 +273,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addGap(40, 40, 40))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jRadioButton2)
                                 .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING))
@@ -274,7 +290,7 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addGap(10,10,10)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40,40,40)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

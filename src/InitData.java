@@ -19,8 +19,9 @@ public class InitData {
 	InitData(GestorSolucion g, String puzzle) {
 	
 		String s = puzzle;
-		s = s.replace(" ", "").toLowerCase(); 
-		s = "ficherosPuzzle/" + s + ".txt";
+		String ss[];
+		ss = s.split(" ");
+		s = "ficherosPuzzle/" + ss[0].toLowerCase() + ss[1] + ".txt";
 		FileReader file;
 		try {
 			file = new FileReader(s);

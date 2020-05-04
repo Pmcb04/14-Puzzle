@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Clase GestorSolucion: 
- * 		Sirve de nexo entre la clase Tablero y la interfaz gráfica
+ * 		Sirve de nexo entre la clase Tablero y la interfaz grï¿½fica
  * 
  * @author Pedro Miguel Carmona & Ruben Marin Lucas
  *
@@ -40,8 +40,8 @@ public class GestorSolucion {
 	}
 	
 	/***
-	 * Introduce el tamaño del tablero en el GestoSolucion
-	 * @param tamTablero tamaño del tablero a tratar
+	 * Introduce el tamaï¿½o del tablero en el GestoSolucion
+	 * @param tamTablero tamaï¿½o del tablero a tratar
 	 */
 	public void setTamTablero(int tamTablero) {
 		this.t.setTamTablero(tamTablero); 
@@ -67,23 +67,23 @@ public class GestorSolucion {
 	}
 	
 	/***
-	 * Introduce un nuevo número de nodos en el GestorSolucion
-	 * @param numNodos Nuevo número de nodos para el GestorSolucion
+	 * Introduce un nuevo nï¿½mero de nodos en el GestorSolucion
+	 * @param numNodos Nuevo nï¿½mero de nodos para el GestorSolucion
 	 */
 	public void setNumNodos(int numNodos) {
 		this.numNodos = numNodos;
 	}
 	
 	/***
-	 * Introduce un nuevo tiempo de ejecución en el GestorSolucion
-	 * @param tiempoEjecucion Nuevo tiempo de ejecución para el GestorSolucion
+	 * Introduce un nuevo tiempo de ejecuciï¿½n en el GestorSolucion
+	 * @param tiempoEjecucion Nuevo tiempo de ejecuciï¿½n para el GestorSolucion
 	 */
 	public void setTiempoEjecucion(double tiempoEjecucion) {
 		this.tiempoEjecucion = tiempoEjecucion;
 	}
 	
 	/***
-	 * Introduce una nueva cadena que contiene los movimientos de la solución
+	 * Introduce una nueva cadena que contiene los movimientos de la soluciï¿½n
 	 * @param solucionFinal Nueva cadena para el GestorSolucion 
 	 */
 	public void setSolucionFinal(String solucionFinal) {
@@ -93,15 +93,15 @@ public class GestorSolucion {
 	
 	/***
 	 * Introduce un nuevo valor para el numero de nodos iguales -nodoIgual-
-	 * @param n Nuevo número de de nodos iguales
+	 * @param n Nuevo nï¿½mero de de nodos iguales
 	 */
 	public void setNodoIgual(int n) {
 		nodoIgual = n;
 	}
 	
 	/***
-	 * Introduce un nuevo valor para el número de nodos peores -nodoPeor-
-	 * @param solucionFinal Nuevo número de nodos peores
+	 * Introduce un nuevo valor para el nï¿½mero de nodos peores -nodoPeor-
+	 * @param solucionFinal Nuevo nï¿½mero de nodos peores
 	 */
 	public void setNodoPeor(int n) {
 		nodoPeor = n;
@@ -116,8 +116,8 @@ public class GestorSolucion {
 	}
 	
 	/***
-	 * Retorna el tamaño del tablero t
-	 * @return tamaño del tablero
+	 * Retorna el tamaï¿½o del tablero t
+	 * @return tamaï¿½o del tablero
 	 */
 	public int getTamTablero() {
 		return this.t.getTamTablero(); 
@@ -135,7 +135,7 @@ public class GestorSolucion {
 	
 	
 	/***
-	 * Retorna el número de nodos generados
+	 * Retorna el nï¿½mero de nodos generados
 	 * @return numNodos
 	 */
 	public int getNumNodos() {
@@ -175,21 +175,21 @@ public class GestorSolucion {
 	}
 	
 	/***
-	 * Incrementa la cifra de número de nodos generados en uno
+	 * Incrementa la cifra de nï¿½mero de nodos generados en uno
 	 */
 	public void addNodos() {
 		numNodos++;
 	}
 	
 	/**
-	 * Incrementa la cifra de número de nodos iguales en uno
+	 * Incrementa la cifra de nï¿½mero de nodos iguales en uno
 	 */
 	public void addNodoIgual() {
 		nodoIgual++;
 	}
 	
 	/**
-	 * Incrementa la cifra de número de nodos peores en uno
+	 * Incrementa la cifra de nï¿½mero de nodos peores en uno
 	 */
 	public void addNodoPeor() {
 		nodoPeor++;
@@ -197,7 +197,7 @@ public class GestorSolucion {
 	
 	/**
 	 * Mete t en la lista de abiertos
-	 * @param t tablero a añadir en la lista abiertos
+	 * @param t tablero a aï¿½adir en la lista abiertos
 	 */
 	public void addAbierto(Tablero t) {
 		abiertos.add(t);
@@ -205,15 +205,15 @@ public class GestorSolucion {
 	
 	/**
 	 * Mete t en la lista de los cerrados
-	 * @param t tablero a añadir en la lista cerrados
+	 * @param t tablero a aï¿½adir en la lista cerrados
 	 */
 	public void addCerrado(Tablero t) {
 		cerrados.add(t);
 	}
 	
 	/**
-	 * Devuelve el tablero que esta en primera posición de la lista abiertos
-	 * @return Tablero en primera posición de la lista abiertos
+	 * Devuelve el tablero que esta en primera posiciï¿½n de la lista abiertos
+	 * @return Tablero en primera posiciï¿½n de la lista abiertos
 	 */
 	public Tablero primerAbierto() {
 		return abiertos.get(0);
@@ -236,7 +236,7 @@ public class GestorSolucion {
 	}
 	
 	/**
-	 * Comprueba si el tablero pasado por parámetro se encuentra en la lista cerrados
+	 * Comprueba si el tablero pasado por parï¿½metro se encuentra en la lista cerrados
 	 * @param t tablero a comprobar si esta en la lista cerrados
 	 * @return true en caso de que se encuentre en la lista, false en caso contrario
 	 */
@@ -270,7 +270,7 @@ public class GestorSolucion {
 	}
 	
 	/**
-	 * Comprueba si el tablero pasado por parámetro se encuentra en la lista abiertos
+	 * Comprueba si el tablero pasado por parï¿½metro se encuentra en la lista abiertos
 	 * @param t tablero a comprobar si esta en la lista abiertos
 	 * @return true en caso que se encuentre en la lista, false en caso contrario
 	 */
@@ -370,7 +370,7 @@ public class GestorSolucion {
 	}
 	
 	/**
-	 * Devuelve el número de hijos que tiene el tablero parado por parámetro
+	 * Devuelve el nï¿½mero de hijos que tiene el tablero parado por parï¿½metro
 	 * @param t tablero a saber cuantos hijos tiene
 	 * @return numHijos del tablero 
 	 */
@@ -426,10 +426,10 @@ public class GestorSolucion {
    }
 	
 	/**
-	 * Añade el tablero pasado por parametro a la lista hijos
-	 * @param t tablero a añadir a la lista hijos
-	 * @param hijos lista para añadir
-	 * @return lista con el tablero añadido 
+	 * Aï¿½ade el tablero pasado por parametro a la lista hijos
+	 * @param t tablero a aï¿½adir a la lista hijos
+	 * @param hijos lista para aï¿½adir
+	 * @return lista con el tablero aï¿½adido 
 	 */
 	public ArrayList<Tablero> addHijo(Tablero t, ArrayList<Tablero> hijos){
 		hijos.add(t);
@@ -442,7 +442,7 @@ public class GestorSolucion {
 	 */
 	public boolean escaladaSimple() {
 		
-		long initTime = System.nanoTime();//Tiempo inicial
+		long initTime = System.currentTimeMillis();//Tiempo inicial
 		boolean fin = false; 
 		Tablero nuevo = new Tablero(); 
 		Tablero actual = t; 
@@ -464,7 +464,7 @@ public class GestorSolucion {
 			
 		}
 		
-		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en ejcutar el algoritmo
 		
 		setTiempoEjecucion(tiempo);
@@ -479,7 +479,7 @@ public class GestorSolucion {
 	 */
 	public boolean escaladaMaximaPendiente() {
 		
-		long initTime = System.nanoTime();//Tiempo inicial
+		long initTime = System.currentTimeMillis();//Tiempo inicial
 		
 		boolean fin = false;
 		Tablero nuevo = new Tablero();
@@ -502,7 +502,7 @@ public class GestorSolucion {
 			}
 		}
 		
-		long endTime = System.nanoTime();//Tiempo final, ya tenemos hemos dejado de generar nodos
+		long endTime = System.currentTimeMillis();//Tiempo final, ya tenemos hemos dejado de generar nodos
 		long tiempo = endTime - initTime;//Tiempo que se tarda en eejcutar el algoritmo
 		setTiempoEjecucion(tiempo);
 		
