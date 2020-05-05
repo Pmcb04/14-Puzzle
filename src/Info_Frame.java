@@ -19,7 +19,8 @@ public class Info_Frame extends JFrame {
      */
     public Info_Frame() {
     	initComponents();
-        ImageIcon img = new ImageIcon("resources/unex.png");
+       // ImageIcon img = new ImageIcon("resources/unex.png");
+        ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("unex.png"));
         setIconImage(img.getImage());
         setVisible(true);
     }
@@ -139,7 +140,8 @@ public class Info_Frame extends JFrame {
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel6.setInheritsPopupMenu(false);
 
-        jButton2.setIcon(new javax.swing.ImageIcon("resources/yes.png")); // NOI18N
+       // jButton2.setIcon(new javax.swing.ImageIcon("resources/yes.png")); // NOI18N
+        jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("yes.png")));
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setFocusPainted(false);
@@ -190,7 +192,8 @@ public class Info_Frame extends JFrame {
         jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel8.setInheritsPopupMenu(false);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("resources/no.png")); // NOI18N
+       // jButton1.setIcon(new javax.swing.ImageIcon("resources/no.png")); // NOI18N
+        jButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("no.png")));
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);

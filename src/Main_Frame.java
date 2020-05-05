@@ -28,7 +28,9 @@ public class Main_Frame extends javax.swing.JFrame {
         setSize(500, 500);
         setTitle("Proyecto IASI 2019/2020");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ImageIcon img = new ImageIcon("resources/unex.png");
+       // ImageIcon img = new ImageIcon("resources/unex.png");
+        
+        ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("unex.png"));
         setIconImage(img.getImage());
         setVisible(true);
     }
@@ -233,7 +235,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jToggleButton1.setIcon(new ImageIcon("resources/info_icon.png"));
+       // jToggleButton1.setIcon(new ImageIcon("resources/info_icon.png"));
+        jToggleButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("info_icon.png")));
         jToggleButton1.setBorder(null);
         jToggleButton1.setBorderPainted(false);
         jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {

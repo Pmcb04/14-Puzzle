@@ -34,7 +34,8 @@ public class Solucion_Frame extends javax.swing.JFrame {
     ocultarNulos();
     trozearSolucion();
     printSolucion(puzzle, metodo, resuelto);
-    ImageIcon img = new ImageIcon("resources/unex.png");
+    //ImageIcon img = new ImageIcon("resources/unex.png");
+    ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("unex.png"));
     setIconImage(img.getImage());
     this.setResizable(true);
     setVisible(true);
@@ -396,7 +397,8 @@ public class Solucion_Frame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setIcon(new ImageIcon("resources/flec_der.png"));
+       // jToggleButton1.setIcon(new ImageIcon("resources/flec_der.png"));
+        jToggleButton1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("flec_der.png")));
         jToggleButton1.setBorderPainted(false);
         jToggleButton1.setContentAreaFilled(false);
         jToggleButton1.setFocusPainted(false);
@@ -409,7 +411,8 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
 
         jToggleButton2.setBorderPainted(false);
-        jToggleButton2.setIcon(new ImageIcon("resources/flec_izq.png"));
+       // jToggleButton2.setIcon(new ImageIcon("resources/flec_izq.png"));
+        jToggleButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("flec_izq.png")));
         jToggleButton2.setContentAreaFilled(false);
         jToggleButton2.setFocusPainted(false);
         jToggleButton2.setFocusable(false);
