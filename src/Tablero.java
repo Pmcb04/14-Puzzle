@@ -16,6 +16,8 @@ public class Tablero {
 	private String movimiento;//Para mostrar el conjunto de movimientos en el futuro
 	private int coste;
 	private int h;
+	private double pesoHeuristica;
+	private double pesoCoste;
 	private int funcion;
 
 
@@ -26,6 +28,26 @@ public class Tablero {
 
 		padre = null;
 		coste = 0;
+		nulos = new ArrayList<Nulo>();
+		matrizTablero = new int[MAX_TAM][MAX_TAM];
+		movimiento = " ";
+
+		for(int i = 0; i < tamTablero; i++)
+			for(int j = 0; j < tamTablero; j++)
+				matrizTablero[i][j] = -1;
+
+	}
+	
+	
+	 /**
+     * Constructor parametrizado de la clase Tablero
+     */
+	public Tablero(double pesoHeuristica, double pesoCoste) {
+
+		padre = null;
+		coste = 0;
+		this.pesoHeuristica = pesoHeuristica;
+		this.pesoCoste = pesoCoste;
 		nulos = new ArrayList<Nulo>();
 		matrizTablero = new int[MAX_TAM][MAX_TAM];
 		movimiento = " ";
@@ -97,6 +119,22 @@ public class Tablero {
 	public void setCoste(int coste) {
 		this.coste = coste;
 	}
+	
+	/**
+	 * establece el peso de la heurista
+	 * @param pesoHeuristica peso de la heuristica
+	 */
+	public void setPesoHeuristica(double pesoHeuristica) {
+		this.pesoHeuristica = pesoHeuristica;
+	}
+	
+	/***
+	 * establece el peso de el coste
+	 * @param pesoCoste peso del coste
+	 */
+	public void setPesoCoste(double pesoCoste) {
+		this.pesoCoste = pesoCoste;
+	}
 
 	/**
 	 * Realiza la funcion para el algoritmo A*
@@ -104,7 +142,7 @@ public class Tablero {
 	 * @param coste del tablero
 	 */
 	public void setFuncion(int heuristica, int coste) {
-		funcion = (int) (1.6*heuristica + 0.4*coste);
+		funcion = (int) (pesoHeuristica*heuristica + pesoCoste*coste);
 	}
 
 
@@ -176,6 +214,21 @@ public class Tablero {
 		return funcion;
 	}
 
+	/**
+	 * retorna el peso de la heuristica
+	 * @param pesoHeuristica peso de la heuristica
+	 */
+	public double getPesoHeuristica() {
+		return pesoHeuristica;
+	}
+	
+	/***
+	 * retorna el peso del coste
+	 * @param pesoCoste peso del coste
+	 */
+	public double getPesoCoste() {
+		return pesoCoste;
+	}
 
 
 	/**
@@ -691,8 +744,8 @@ public class Tablero {
 	 * @param g gestorSolucion para almacenar el numero de nodos generado
 	 * @param coste coste a poner al hacer el movimiento nuevo
 	 */
-	public void GenerarMovimientosA1(GestorSolucion g, int coste) {
-		Tablero aux = new Tablero();
+	public void GenerarMovimientosA1(GestorSolucion g, int coste, double pesoHeuristica, double pesoCoste) {
+		Tablero aux = new Tablero(pesoHeuristica, pesoCoste);
 		copy(aux); // copiamos el tablero actual
 		boolean fin = false;  boolean b0, b1; Tablero t;
 		int k;
@@ -724,7 +777,7 @@ public class Tablero {
 								aux.setPadre(this);
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}else{
 
 								if(b1) {//si el tablero est� en abiertos, no puede tener hijos, porque no se ha llegado a expandir
@@ -770,7 +823,7 @@ public class Tablero {
 								aux.setPadre(this);
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}else{
 
 								if(b1) {
@@ -816,7 +869,7 @@ public class Tablero {
 								aux.setPadre(this);
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}else{
 
 								if(b1) {
@@ -862,7 +915,7 @@ public class Tablero {
 								aux.setPadre(this);
 								g.addAbierto(aux);
 								if(aux.getHeuristica() == 0) fin = true;
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}else{
 
 								if(b1) {
@@ -913,8 +966,8 @@ public class Tablero {
 	 * @param g gestorSolucion para almacenar el numero de nodos generado
 	 * @param coste coste a poner al hacer el movimiento nuevo
 	 */
-	public void GenerarMovimientosA(GestorSolucion g, int coste) {
-		Tablero aux = new Tablero();
+	public void GenerarMovimientosA(GestorSolucion g, int coste, double pesoHeuristica, double pesoCoste) {
+		Tablero aux = new Tablero(pesoHeuristica, pesoCoste);
 		copy(aux); // copiamos el tablero actual
 
 		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeros que representan los nulos
@@ -938,7 +991,7 @@ public class Tablero {
 								aux.setFuncion(aux.getHeuristica(), coste);
 								g.addNodos();
 								g.addAbierto(aux);
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}
 						}
 
@@ -953,7 +1006,7 @@ public class Tablero {
 								aux.setFuncion(aux.getHeuristica(), coste);
 								g.addNodos();
 								g.addAbierto(aux);
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}
 						}
 						break;
@@ -967,7 +1020,7 @@ public class Tablero {
 								aux.setFuncion(aux.getHeuristica(), coste);
 								g.addNodos();
 								g.addAbierto(aux);
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}
 						}
 						break;
@@ -981,7 +1034,7 @@ public class Tablero {
 								aux.setFuncion(aux.getHeuristica(), coste);
 								g.addNodos();
 								g.addAbierto(aux);
-								aux = new Tablero();
+								aux = new Tablero(pesoHeuristica, pesoCoste);
 							}
 						}
 						break;

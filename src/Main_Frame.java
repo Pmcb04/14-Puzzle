@@ -76,7 +76,7 @@ public class Main_Frame extends javax.swing.JFrame {
     	
     	if(algoritmo.equals(jRadioButton1.getText())) fin = g.escaladaSimple();
     	if(algoritmo.equals(jRadioButton2.getText())) fin = g.escaladaMaximaPendiente();
-    	if(algoritmo.equals(jRadioButton3.getText())) fin = g.algoritmoA();
+    	if(algoritmo.equals(jRadioButton3.getText())) fin = g.algoritmoA(1.6,0.4);
     	if(algoritmo.equals(jRadioButton4.getText())) fin = g.escaladaMaximaPendiente1();
     	
     	return fin;

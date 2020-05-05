@@ -1,66 +1,18 @@
-/.classpath
-/.project
-/14-puzzle.exe
-/14-puzzle.jar
-/14-puzzle.xml
-/A estrella/
-/GestorSolucion.html
-/Info_Frame.html
-/InitData.html
-/Log.html
-/Main.html
-/Main_Frame.html
-/Pruebas.html
-/README.md
-/Solucion_Frame.html
-/Tablero.html
-/allclasses-index.html
-/allclasses.html
-/allpackages-index.html
-/class-use/
-/constant-values.html
-/deprecated-list.html
-/element-list
-/escalada maxima pendiente/
-/escalada simple/
-/flec_der.png
-/flec_izq.png
-/help-doc.html
-/index-files/
-/index.html
-/info_icon.png
-/jquery/
-/launch4j.log
-/member-search-index.js
-/member-search-index.zip
-/modificacion escalada maxima pendiente/
-/no.png
-/org.eclipse.jdt.core.prefs
-/overview-tree.html
-/package-search-index.js
-/package-search-index.zip
-/package-summary.html
-/package-tree.html
-/package-use.html
-/puzzle1.txt
-/puzzle10.txt
-/puzzle2.txt
-/puzzle3.txt
-/puzzle4.txt
-/puzzle5.txt
-/puzzle6.txt
-/puzzle7.txt
-/puzzle8.txt
-/puzzle9.txt
-/resources/
-/script.js
-/search.js
-/serialized-form.html
-/stylesheet.css
-/type-search-index.js
-/type-search-index.zip
-/unex.png
-/yes.png
 /Solucion_Frame$1.class
 /Solucion_Frame$2.class
 /Solucion_Frame$3.class
+/Solucion_Frame.class
+/Tablero.class
+/A estrella/
+/escalada maxima pendiente/
+/escalada simple/
+/modificacion escalada maxima pendiente/
+/puzzle11.txt
+/puzzle12.txt
+/puzzle13.txt
+/puzzle14.txt
+/puzzle15.txt
+/class-use/
+/index-files/
+/jquery/
+/resources/

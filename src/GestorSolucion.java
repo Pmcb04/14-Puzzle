@@ -554,11 +554,14 @@ public class GestorSolucion {
 	 * Realiza el algoritmo de A*
 	 * @return fin, true en caso de haber encontrado una solucion, false en caso contrario
 	 */
-	public boolean algoritmoA(){
+	public boolean algoritmoA(double pesoHeuristica, double pesoCoste){
 		long initTime = System.currentTimeMillis();//Tiempo inicial
 		
 		abiertos = new ArrayList<Tablero>();
 		cerrados = new ArrayList<Tablero>();
+		
+		t.setPesoHeuristica(pesoHeuristica);
+		t.setPesoCoste(pesoCoste);
 		
 		boolean fin = false;
 		Tablero actual = new Tablero();
@@ -574,7 +577,7 @@ public class GestorSolucion {
 			removeAbierto();
 			addCerrado(actual);
 			if(actual.FuncionHeuristica1() == 0) fin = true;
-			actual.GenerarMovimientosA1(this, actual.getCoste()+1);
+			actual.GenerarMovimientosA1(this, actual.getCoste()+1,pesoHeuristica, pesoCoste);
 			sortAbiertos();				
 		}
 		

@@ -1,0 +1,21 @@
+[prueba 1 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 11 // Numero movimientos: 2 // Resuelto: true
+[prueba 2 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 14 // Numero movimientos: 2 // Resuelto: true
+[prueba 3 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 16 // Numero movimientos: 2 // Resuelto: true
+[prueba 4 puzzle 2] Tiempo empleado: 1.0 ms // Nodos Generados: 14 // Numero movimientos: 2 // Resuelto: true
+[prueba 5 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 14 // Numero movimientos: 2 // Resuelto: true
+[prueba 6 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 14 // Numero movimientos: 2 // Resuelto: true
+[prueba 7 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 15 // Numero movimientos: 2 // Resuelto: true
+[prueba 8 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 13 // Numero movimientos: 2 // Resuelto: true
+[prueba 9 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 13 // Numero movimientos: 2 // Resuelto: true
+[prueba 10 puzzle 2] Tiempo empleado: 0.0 ms // Nodos Generados: 13 // Numero movimientos: 2 // Resuelto: true
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Tiempo medio empleado: 0.1 ms
+Nodos generados media: 13 
+Numero movimientos media: 2 
+Numero de resueltos: 10 
+Numero de no resueltos: 0
+Tasa de aciertos: 100 %
+Tasa de error: 0 %
+---------------------------------------------------------------------------------------------------------------------------------------------

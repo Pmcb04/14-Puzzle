@@ -9,10 +9,10 @@ public class Pruebas {
 	
 	Pruebas(){
 
-		prueba("EscaladaSimple", "ES", "pruebas/escalada simple", 1000);
-		prueba("EscaladaMaximaPendiente", "EMP", "pruebas/escalada maxima pendiente", 1000);
-		prueba("ModificacionEscaladaMaximaPendiente", "MEMP", "pruebas/modificacion escalada maxima pendiente", 1000);
-		prueba("AEstrella", "A*", "pruebas/A estrella", 100);
+		prueba("EscaladaSimple", "ES", "pruebas/escalada simple", 1000, 0, 0);
+		prueba("EscaladaMaximaPendiente", "EMP", "pruebas/escalada maxima pendiente", 1000, 0, 0);
+		prueba("ModificacionEscaladaMaximaPendiente", "MEMP", "pruebas/modificacion escalada maxima pendiente", 1000, 0, 0);
+		prueba("AEstrella", "A*", "pruebas/A estrella", 10, 1.6, 0.4);
 		System.out.println("------------------- PRUEBAS TERMINADAS -------------------");
 	}
 	
@@ -23,13 +23,13 @@ public class Pruebas {
 	 * @param abreviatura ebreviatura del metodo {ES, EMP, MEMP, A*}
 	 * @param ruta ruta donde se van a situar los ficheros de prueba
 	 */
-	private void prueba(String metodo, String abreviatura, String ruta, int numPruebas) {
+	private void prueba(String metodo, String abreviatura, String ruta, int numPruebas, double pesoHeuristica, double pesoCoste) {
 		
 		int nodos = 0;
 		double tiempo = 0;
 		int movimientos = 0;
 		
-		int numResultos = 0;
+		int numResueltos = 0;
 		int numNoResueltos = 0;
 		int numMovimientos = 0;
 		int numNodos = 0;
@@ -38,21 +38,29 @@ public class Pruebas {
 		int puzzle = 1;
 		int prueba = 1;
 		GestorSolucion gs;
+		String medida = "";
 		boolean resuelto;
 		
 		while(puzzle <= PUZZLES) {
 			
-			try {log = new Log(ruta, "puzzle" + puzzle + metodo + ".txt");
-			} catch (IOException e) {e.printStackTrace();}
+			if(abreviatura.equals("A*")) {
+				try {log = new Log(ruta, "puzzle" + puzzle + metodo + "h" + pesoHeuristica + "g" + pesoCoste + ".txt");
+				} catch (IOException e) {e.printStackTrace();}
+				
+			}else {
+				try {log = new Log(ruta, "puzzle" + puzzle + metodo + ".txt");
+				} catch (IOException e) {e.printStackTrace();}
+			}
 			
-			
-			
+
 			while(prueba <= numPruebas) {				
 				
-				gs = getPuzzle("puzzle" + puzzle);
+				gs = getPuzzle("puzzle " + puzzle + " (4x4)");
+				gs.getT().setPesoHeuristica(pesoHeuristica);
+				gs.getT().setPesoHeuristica(pesoHeuristica);
 				resuelto = getSolucion(gs, abreviatura);
 				
-				if(resuelto) numResultos++;
+				if(resuelto) numResueltos++;
 				else numNoResueltos++;
 				
 				nodos = gs.getNumNodos();
@@ -71,22 +79,34 @@ public class Pruebas {
 				prueba++;
 			}
 		
+			if(!abreviatura.equals("A*") && !abreviatura.equals("MEMP")) medida = "ns"; 
+			else medida = "ms";
 			
 			log.print("\n");
 			log.print("---------------------------------------------------------------------------------------------------------------------------------------------");
-			if(!abreviatura.equals("A*") && !abreviatura.equals("MEMP")) log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " ns \nNodos generados media: " + numNodos/numPruebas + " \nNumero movimientos media: " + numMovimientos/numPruebas + " \nN� resueltos: " + numResultos + " \nN� no resueltos: " + numNoResueltos);
-			else log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " ms \nNodos generados media: " + numNodos/numPruebas + " \nNumero movimientos media: " + numMovimientos/numPruebas + " \nN� resueltos: " + numResultos + " \nN� no resueltos: " + numNoResueltos);
+			log.print("Tiempo medio empleado: " + tiempoTotal/numPruebas + " " + medida + "\n"
+						+ "Nodos generados media: " + numNodos/numPruebas + " \n"
+						+ "Numero movimientos media: " + numMovimientos/numPruebas + " \n"
+						+ "Numero de resueltos: " + numResueltos + " \n" 
+						+ "Numero de no resueltos: " + numNoResueltos + "\n"
+						+ "Tasa de aciertos: " + ((numResueltos*100)/numPruebas) + " %" + "\n"
+						+ "Tasa de error: " + ((numNoResueltos*100)/numPruebas) + " %");
 			log.print("---------------------------------------------------------------------------------------------------------------------------------------------");
 
 			
 			log.closeFile();
-			prueba = 1;
-			tiempo = 0;
+			
 			nodos = 0;
+			tiempo = 0;
 			movimientos = 0;
-			numMovimientos = 0;
-			numResultos = 0;
+			
+			numResueltos = 0;
 			numNoResueltos = 0;
+			numMovimientos = 0;
+			numNodos = 0;
+			tiempoTotal = 0;
+			
+			prueba = 1;
 			puzzle++;
 		}
 		
@@ -169,7 +189,7 @@ public class Pruebas {
 	    	if(algoritmo.equals("ES")) fin = g.escaladaSimple();
 	    	if(algoritmo.equals("EMP")) fin = g.escaladaMaximaPendiente();
 	    	if(algoritmo.equals("MEMP")) fin = g.escaladaMaximaPendiente1();
-	    	if(algoritmo.equals("A*")) fin = g.algoritmoA();
+	    	if(algoritmo.equals("A*")) fin = g.algoritmoA(g.getT().getPesoHeuristica(), g.getT().getPesoCoste());
 	    	
 	    	return fin;
 
