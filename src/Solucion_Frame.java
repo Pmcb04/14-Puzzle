@@ -20,11 +20,11 @@ public class Solucion_Frame extends javax.swing.JFrame {
    * @param metodo metodo de resolucion del puzzle
    * @param resuelto bandera para ver si se a resuelto o no
    */
-  public Solucion_Frame(GestorSolucion g, String puzzle, String metodo, boolean resuelto) {
+  public Solucion_Frame(GestorSolucion g, String puzzle, String metodo, boolean resuelto, double pesoHeuristica, double pesoCoste) {
     this.g = g;
     initComponents();
     indexSolucion = 0;
-    jLabel1.setText("Soluci髇 " + puzzle + ":");
+    jLabel1.setText("Soluci贸n " + puzzle + ":");
     labelSolucion.setText(g.getSolucionFinal());
     labelSolucion.setFont(new java.awt.Font("Roboto Lt", 2, 20)); // NOI18N
     numNodosInt.setText(g.getNumNodos() + "");
@@ -33,8 +33,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
     setValores();
     ocultarNulos();
     trozearSolucion();
-    printSolucion(puzzle, metodo, resuelto);
-    //ImageIcon img = new ImageIcon("resources/unex.png");
+    printSolucion(puzzle, metodo, resuelto, pesoHeuristica, pesoCoste);
     ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("unex.png"));
     setIconImage(img.getImage());
     this.setResizable(true);
@@ -140,13 +139,14 @@ public class Solucion_Frame extends javax.swing.JFrame {
    * @param metodo metodo por el cual se a intentado resolver
    * @param resuelto bandera que dice si se a resuelto o no
    */
-  private void printSolucion(String puzzle, String metodo, boolean resuelto) {
+  private void printSolucion(String puzzle, String metodo, boolean resuelto, double pesoHeuristica, double pesoCoste) {
 
 
-	  if(resuelto)  System.out.println("Soluci髇 del " + puzzle + " resuelto por el m閠odo " + metodo + ":");
-	  else System.out.println("No se ha podido resolver el " + puzzle +  " por el m閠odo " + metodo + " la mejor soluci髇 obtenida a sido:");
+	  if(resuelto)  System.out.println("Soluci贸n del " + puzzle + " resuelto por el m茅todo " + metodo + ":");
+	  else System.out.println("No se ha podido resolver el " + puzzle +  " por el m茅todo " + metodo + " la mejor soluci贸n obtenida a sido:");
 
-
+	  if(metodo.equals("Algoritmo A*")) System.out.println("Peso heuristica: " + pesoHeuristica + " Peso Coste: " + pesoCoste);
+	  
 	  for (String s : solucion) System.out.print(s + " ");
 
 	  System.out.println();
@@ -1332,7 +1332,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Soluci髇:");
+        jLabel1.setText("Soluci贸n:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1352,7 +1352,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString.setText("N鷐ero de nodos:");
+        numNodosString.setText("N煤mero de nodos:");
 
         numNodosInt.setBackground(new java.awt.Color(255, 255, 255));
         numNodosInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -1360,7 +1360,7 @@ public class Solucion_Frame extends javax.swing.JFrame {
 
         numNodosString1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numNodosString1.setForeground(new java.awt.Color(255, 255, 255));
-        numNodosString1.setText("Tiempo ejecuci髇:");
+        numNodosString1.setText("Tiempo ejecuci贸n:");
 
         numNodosInt1.setForeground(new java.awt.Color(255, 255, 255));
         numNodosInt1.setText("");
