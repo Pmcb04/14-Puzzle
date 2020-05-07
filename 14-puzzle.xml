@@ -15,7 +15,7 @@
   <manifest></manifest>
   <icon></icon>
   <jre>
-    <path>C:\Program Files\Java\jdk-11.0.6</path>
+    <path>C:\Program Files\Java\jdk-11.0.6\bin</path>
     <bundledJre64Bit>true</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
     <minVersion>11.0.6</minVersion>
