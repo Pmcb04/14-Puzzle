@@ -744,7 +744,7 @@ public class Tablero {
 	 * @param g gestorSolucion para almacenar el numero de nodos generado
 	 * @param coste coste a poner al hacer el movimiento nuevo
 	 */
-	public void GenerarMovimientosA1(GestorSolucion g, int coste, double pesoHeuristica, double pesoCoste) {
+	public void GenerarMovimientosA(GestorSolucion g, int coste, double pesoHeuristica, double pesoCoste) {
 		Tablero aux = new Tablero(pesoHeuristica, pesoCoste);
 		copy(aux); // copiamos el tablero actual
 		boolean fin = false;  boolean b0, b1; Tablero t;
@@ -945,97 +945,6 @@ public class Tablero {
 									}
 							   }
 						    }
-						}
-						break;
-
-				}
-
-				mov.remove(0);
-				copy(aux);
-
-		    }
-
-			nulo.remove(0);
-
-		}
-	}
-
-	/**
-	 * Genera el mejorMovimiento en cada paso del algoritmo de A*, no tiene en cuenta los atajos
-	 * como es algoritmo A*, tiene que coger el que que menos f'(n) nos de
-	 * @param g gestorSolucion para almacenar el numero de nodos generado
-	 * @param coste coste a poner al hacer el movimiento nuevo
-	 */
-	public void GenerarMovimientosA(GestorSolucion g, int coste, double pesoHeuristica, double pesoCoste) {
-		Tablero aux = new Tablero(pesoHeuristica, pesoCoste);
-		copy(aux); // copiamos el tablero actual
-
-		ArrayList <Integer> nulo = generarMovNulos(); //Array con numeros que representan los nulos
-		while(!nulo.isEmpty()) {
-
-			ArrayList <Integer> mov = generarMovimientos(); //Array con todos los movimientos aleatorios
-			Integer num = nulo.get(0);
-
-			while(!mov.isEmpty()) {
-
-				Integer movimiento = mov.get(0);
-				Nulo n = aux.getNulo(num);
-
-				switch(movimiento) {
-					case 0:
-						if(aux.moverNorte(n)){
-							if((!g.isCerrado(aux) &&  !g.isAbierto(aux))) {
-								aux.setPadre(this);
-								aux.setHeuristica(aux.FuncionHeuristica1());
-								aux.setCoste(coste);
-								aux.setFuncion(aux.getHeuristica(), coste);
-								g.addNodos();
-								g.addAbierto(aux);
-								aux = new Tablero(pesoHeuristica, pesoCoste);
-							}
-						}
-
-						break;
-
-					case 1:
-						if(aux.moverEste(n)) {
-							if((!g.isCerrado(aux) &&  !g.isAbierto(aux))) {
-								aux.setPadre(this);
-								aux.setHeuristica(aux.FuncionHeuristica1());
-								aux.setCoste(coste);
-								aux.setFuncion(aux.getHeuristica(), coste);
-								g.addNodos();
-								g.addAbierto(aux);
-								aux = new Tablero(pesoHeuristica, pesoCoste);
-							}
-						}
-						break;
-
-					case 2:
-						if(aux.moverOeste(n)) {
-							if((!g.isCerrado(aux) &&  !g.isAbierto(aux))) {
-								aux.setPadre(this);
-								aux.setHeuristica(aux.FuncionHeuristica1());
-								aux.setCoste(coste);
-								aux.setFuncion(aux.getHeuristica(), coste);
-								g.addNodos();
-								g.addAbierto(aux);
-								aux = new Tablero(pesoHeuristica, pesoCoste);
-							}
-						}
-						break;
-
-					case 3:
-						if(aux.moverSur(n)) {
-							if((!g.isCerrado(aux) &&  !g.isAbierto(aux))) {
-								aux.setPadre(this);
-								aux.setHeuristica(aux.FuncionHeuristica1());
-								aux.setCoste(coste);
-								aux.setFuncion(aux.getHeuristica(), coste);
-								g.addNodos();
-								g.addAbierto(aux);
-								aux = new Tablero(pesoHeuristica, pesoCoste);
-							}
 						}
 						break;
 
