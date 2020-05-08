@@ -1,0 +1,111 @@
+[prueba 1 puzzle 4] Tiempo empleado: 4362.0 ms // Nodos Generados: 19508 // Numero movimientos: 87 // Resuelto: true
+[prueba 2 puzzle 4] Tiempo empleado: 2987.0 ms // Nodos Generados: 17429 // Numero movimientos: 75 // Resuelto: true
+[prueba 3 puzzle 4] Tiempo empleado: 15756.0 ms // Nodos Generados: 33047 // Numero movimientos: 79 // Resuelto: true
+[prueba 4 puzzle 4] Tiempo empleado: 163.0 ms // Nodos Generados: 4231 // Numero movimientos: 71 // Resuelto: true
+[prueba 5 puzzle 4] Tiempo empleado: 1044.0 ms // Nodos Generados: 10863 // Numero movimientos: 87 // Resuelto: true
+[prueba 6 puzzle 4] Tiempo empleado: 439.0 ms // Nodos Generados: 6744 // Numero movimientos: 79 // Resuelto: true
+[prueba 7 puzzle 4] Tiempo empleado: 116.0 ms // Nodos Generados: 3194 // Numero movimientos: 73 // Resuelto: true
+[prueba 8 puzzle 4] Tiempo empleado: 384.0 ms // Nodos Generados: 6477 // Numero movimientos: 73 // Resuelto: true
+[prueba 9 puzzle 4] Tiempo empleado: 723.0 ms // Nodos Generados: 8913 // Numero movimientos: 85 // Resuelto: true
+[prueba 10 puzzle 4] Tiempo empleado: 7485.0 ms // Nodos Generados: 24485 // Numero movimientos: 79 // Resuelto: true
+[prueba 11 puzzle 4] Tiempo empleado: 492.0 ms // Nodos Generados: 6948 // Numero movimientos: 79 // Resuelto: true
+[prueba 12 puzzle 4] Tiempo empleado: 742.0 ms // Nodos Generados: 8120 // Numero movimientos: 79 // Resuelto: true
+[prueba 13 puzzle 4] Tiempo empleado: 1105.0 ms // Nodos Generados: 10988 // Numero movimientos: 89 // Resuelto: true
+[prueba 14 puzzle 4] Tiempo empleado: 95.0 ms // Nodos Generados: 3164 // Numero movimientos: 77 // Resuelto: true
+[prueba 15 puzzle 4] Tiempo empleado: 212.0 ms // Nodos Generados: 4619 // Numero movimientos: 77 // Resuelto: true
+[prueba 16 puzzle 4] Tiempo empleado: 2317.0 ms // Nodos Generados: 15531 // Numero movimientos: 71 // Resuelto: true
+[prueba 17 puzzle 4] Tiempo empleado: 2083.0 ms // Nodos Generados: 14735 // Numero movimientos: 89 // Resuelto: true
+[prueba 18 puzzle 4] Tiempo empleado: 119.0 ms // Nodos Generados: 3565 // Numero movimientos: 83 // Resuelto: true
+[prueba 19 puzzle 4] Tiempo empleado: 451.0 ms // Nodos Generados: 6830 // Numero movimientos: 79 // Resuelto: true
+[prueba 20 puzzle 4] Tiempo empleado: 1024.0 ms // Nodos Generados: 10588 // Numero movimientos: 85 // Resuelto: true
+[prueba 21 puzzle 4] Tiempo empleado: 490.0 ms // Nodos Generados: 7319 // Numero movimientos: 85 // Resuelto: true
+[prueba 22 puzzle 4] Tiempo empleado: 2245.0 ms // Nodos Generados: 15158 // Numero movimientos: 85 // Resuelto: true
+[prueba 23 puzzle 4] Tiempo empleado: 1191.0 ms // Nodos Generados: 10855 // Numero movimientos: 77 // Resuelto: true
+[prueba 24 puzzle 4] Tiempo empleado: 10273.0 ms // Nodos Generados: 28451 // Numero movimientos: 71 // Resuelto: true
+[prueba 25 puzzle 4] Tiempo empleado: 12715.0 ms // Nodos Generados: 29545 // Numero movimientos: 77 // Resuelto: true
+[prueba 26 puzzle 4] Tiempo empleado: 1781.0 ms // Nodos Generados: 13394 // Numero movimientos: 71 // Resuelto: true
+[prueba 27 puzzle 4] Tiempo empleado: 816.0 ms // Nodos Generados: 9206 // Numero movimientos: 73 // Resuelto: true
+[prueba 28 puzzle 4] Tiempo empleado: 217.0 ms // Nodos Generados: 4530 // Numero movimientos: 77 // Resuelto: true
+[prueba 29 puzzle 4] Tiempo empleado: 2327.0 ms // Nodos Generados: 15471 // Numero movimientos: 73 // Resuelto: true
+[prueba 30 puzzle 4] Tiempo empleado: 4157.0 ms // Nodos Generados: 18747 // Numero movimientos: 67 // Resuelto: true
+[prueba 31 puzzle 4] Tiempo empleado: 2264.0 ms // Nodos Generados: 14879 // Numero movimientos: 71 // Resuelto: true
+[prueba 32 puzzle 4] Tiempo empleado: 1083.0 ms // Nodos Generados: 10753 // Numero movimientos: 95 // Resuelto: true
+[prueba 33 puzzle 4] Tiempo empleado: 572.0 ms // Nodos Generados: 7468 // Numero movimientos: 79 // Resuelto: true
+[prueba 34 puzzle 4] Tiempo empleado: 1187.0 ms // Nodos Generados: 10913 // Numero movimientos: 77 // Resuelto: true
+[prueba 35 puzzle 4] Tiempo empleado: 587.0 ms // Nodos Generados: 7886 // Numero movimientos: 75 // Resuelto: true
+[prueba 36 puzzle 4] Tiempo empleado: 532.0 ms // Nodos Generados: 7055 // Numero movimientos: 75 // Resuelto: true
+[prueba 37 puzzle 4] Tiempo empleado: 187.0 ms // Nodos Generados: 3880 // Numero movimientos: 73 // Resuelto: true
+[prueba 38 puzzle 4] Tiempo empleado: 936.0 ms // Nodos Generados: 8856 // Numero movimientos: 79 // Resuelto: true
+[prueba 39 puzzle 4] Tiempo empleado: 1159.0 ms // Nodos Generados: 11045 // Numero movimientos: 89 // Resuelto: true
+[prueba 40 puzzle 4] Tiempo empleado: 2297.0 ms // Nodos Generados: 13425 // Numero movimientos: 71 // Resuelto: true
+[prueba 41 puzzle 4] Tiempo empleado: 252.0 ms // Nodos Generados: 5136 // Numero movimientos: 63 // Resuelto: true
+[prueba 42 puzzle 4] Tiempo empleado: 929.0 ms // Nodos Generados: 9605 // Numero movimientos: 79 // Resuelto: true
+[prueba 43 puzzle 4] Tiempo empleado: 96.0 ms // Nodos Generados: 3165 // Numero movimientos: 77 // Resuelto: true
+[prueba 44 puzzle 4] Tiempo empleado: 810.0 ms // Nodos Generados: 8388 // Numero movimientos: 79 // Resuelto: true
+[prueba 45 puzzle 4] Tiempo empleado: 835.0 ms // Nodos Generados: 9155 // Numero movimientos: 73 // Resuelto: true
+[prueba 46 puzzle 4] Tiempo empleado: 60885.0 ms // Nodos Generados: 52444 // Numero movimientos: 87 // Resuelto: true
+[prueba 47 puzzle 4] Tiempo empleado: 32080.0 ms // Nodos Generados: 43144 // Numero movimientos: 77 // Resuelto: true
+[prueba 48 puzzle 4] Tiempo empleado: 457.0 ms // Nodos Generados: 6792 // Numero movimientos: 75 // Resuelto: true
+[prueba 49 puzzle 4] Tiempo empleado: 3184.0 ms // Nodos Generados: 18258 // Numero movimientos: 81 // Resuelto: true
+[prueba 50 puzzle 4] Tiempo empleado: 238.0 ms // Nodos Generados: 5145 // Numero movimientos: 63 // Resuelto: true
+[prueba 51 puzzle 4] Tiempo empleado: 707.0 ms // Nodos Generados: 8769 // Numero movimientos: 81 // Resuelto: true
+[prueba 52 puzzle 4] Tiempo empleado: 3524.0 ms // Nodos Generados: 18889 // Numero movimientos: 67 // Resuelto: true
+[prueba 53 puzzle 4] Tiempo empleado: 686.0 ms // Nodos Generados: 7879 // Numero movimientos: 89 // Resuelto: true
+[prueba 54 puzzle 4] Tiempo empleado: 3824.0 ms // Nodos Generados: 19765 // Numero movimientos: 83 // Resuelto: true
+[prueba 55 puzzle 4] Tiempo empleado: 535.0 ms // Nodos Generados: 7547 // Numero movimientos: 89 // Resuelto: true
+[prueba 56 puzzle 4] Tiempo empleado: 2401.0 ms // Nodos Generados: 16063 // Numero movimientos: 73 // Resuelto: true
+[prueba 57 puzzle 4] Tiempo empleado: 838.0 ms // Nodos Generados: 9437 // Numero movimientos: 73 // Resuelto: true
+[prueba 58 puzzle 4] Tiempo empleado: 1818.0 ms // Nodos Generados: 13392 // Numero movimientos: 73 // Resuelto: true
+[prueba 59 puzzle 4] Tiempo empleado: 435.0 ms // Nodos Generados: 6931 // Numero movimientos: 75 // Resuelto: true
+[prueba 60 puzzle 4] Tiempo empleado: 94.0 ms // Nodos Generados: 3181 // Numero movimientos: 77 // Resuelto: true
+[prueba 61 puzzle 4] Tiempo empleado: 2341.0 ms // Nodos Generados: 15663 // Numero movimientos: 73 // Resuelto: true
+[prueba 62 puzzle 4] Tiempo empleado: 171.0 ms // Nodos Generados: 4191 // Numero movimientos: 73 // Resuelto: true
+[prueba 63 puzzle 4] Tiempo empleado: 27663.0 ms // Nodos Generados: 40739 // Numero movimientos: 91 // Resuelto: true
+[prueba 64 puzzle 4] Tiempo empleado: 579.0 ms // Nodos Generados: 7521 // Numero movimientos: 79 // Resuelto: true
+[prueba 65 puzzle 4] Tiempo empleado: 164.0 ms // Nodos Generados: 3802 // Numero movimientos: 73 // Resuelto: true
+[prueba 66 puzzle 4] Tiempo empleado: 542.0 ms // Nodos Generados: 7328 // Numero movimientos: 79 // Resuelto: true
+[prueba 67 puzzle 4] Tiempo empleado: 944.0 ms // Nodos Generados: 10311 // Numero movimientos: 87 // Resuelto: true
+[prueba 68 puzzle 4] Tiempo empleado: 92.0 ms // Nodos Generados: 3101 // Numero movimientos: 77 // Resuelto: true
+[prueba 69 puzzle 4] Tiempo empleado: 2636.0 ms // Nodos Generados: 16607 // Numero movimientos: 69 // Resuelto: true
+[prueba 70 puzzle 4] Tiempo empleado: 506.0 ms // Nodos Generados: 7035 // Numero movimientos: 75 // Resuelto: true
+[prueba 71 puzzle 4] Tiempo empleado: 230.0 ms // Nodos Generados: 4950 // Numero movimientos: 63 // Resuelto: true
+[prueba 72 puzzle 4] Tiempo empleado: 1446.0 ms // Nodos Generados: 12213 // Numero movimientos: 79 // Resuelto: true
+[prueba 73 puzzle 4] Tiempo empleado: 810.0 ms // Nodos Generados: 9213 // Numero movimientos: 73 // Resuelto: true
+[prueba 74 puzzle 4] Tiempo empleado: 2206.0 ms // Nodos Generados: 15159 // Numero movimientos: 71 // Resuelto: true
+[prueba 75 puzzle 4] Tiempo empleado: 126.0 ms // Nodos Generados: 3529 // Numero movimientos: 73 // Resuelto: true
+[prueba 76 puzzle 4] Tiempo empleado: 792.0 ms // Nodos Generados: 9074 // Numero movimientos: 85 // Resuelto: true
+[prueba 77 puzzle 4] Tiempo empleado: 19855.0 ms // Nodos Generados: 37261 // Numero movimientos: 79 // Resuelto: true
+[prueba 78 puzzle 4] Tiempo empleado: 26463.0 ms // Nodos Generados: 38779 // Numero movimientos: 85 // Resuelto: true
+[prueba 79 puzzle 4] Tiempo empleado: 193.0 ms // Nodos Generados: 4250 // Numero movimientos: 79 // Resuelto: true
+[prueba 80 puzzle 4] Tiempo empleado: 171.0 ms // Nodos Generados: 3931 // Numero movimientos: 73 // Resuelto: true
+[prueba 81 puzzle 4] Tiempo empleado: 1089.0 ms // Nodos Generados: 10954 // Numero movimientos: 85 // Resuelto: true
+[prueba 82 puzzle 4] Tiempo empleado: 3844.0 ms // Nodos Generados: 18815 // Numero movimientos: 69 // Resuelto: true
+[prueba 83 puzzle 4] Tiempo empleado: 814.0 ms // Nodos Generados: 9361 // Numero movimientos: 91 // Resuelto: true
+[prueba 84 puzzle 4] Tiempo empleado: 434.0 ms // Nodos Generados: 6479 // Numero movimientos: 87 // Resuelto: true
+[prueba 85 puzzle 4] Tiempo empleado: 568.0 ms // Nodos Generados: 7335 // Numero movimientos: 79 // Resuelto: true
+[prueba 86 puzzle 4] Tiempo empleado: 913.0 ms // Nodos Generados: 9546 // Numero movimientos: 79 // Resuelto: true
+[prueba 87 puzzle 4] Tiempo empleado: 2750.0 ms // Nodos Generados: 15897 // Numero movimientos: 73 // Resuelto: true
+[prueba 88 puzzle 4] Tiempo empleado: 494.0 ms // Nodos Generados: 6902 // Numero movimientos: 79 // Resuelto: true
+[prueba 89 puzzle 4] Tiempo empleado: 110.0 ms // Nodos Generados: 3068 // Numero movimientos: 73 // Resuelto: true
+[prueba 90 puzzle 4] Tiempo empleado: 827.0 ms // Nodos Generados: 8978 // Numero movimientos: 85 // Resuelto: true
+[prueba 91 puzzle 4] Tiempo empleado: 846.0 ms // Nodos Generados: 8669 // Numero movimientos: 79 // Resuelto: true
+[prueba 92 puzzle 4] Tiempo empleado: 3651.0 ms // Nodos Generados: 18326 // Numero movimientos: 81 // Resuelto: true
+[prueba 93 puzzle 4] Tiempo empleado: 564.0 ms // Nodos Generados: 7324 // Numero movimientos: 79 // Resuelto: true
+[prueba 94 puzzle 4] Tiempo empleado: 845.0 ms // Nodos Generados: 9110 // Numero movimientos: 73 // Resuelto: true
+[prueba 95 puzzle 4] Tiempo empleado: 38514.0 ms // Nodos Generados: 43787 // Numero movimientos: 83 // Resuelto: true
+[prueba 96 puzzle 4] Tiempo empleado: 170.0 ms // Nodos Generados: 4076 // Numero movimientos: 79 // Resuelto: true
+[prueba 97 puzzle 4] Tiempo empleado: 134.0 ms // Nodos Generados: 3430 // Numero movimientos: 69 // Resuelto: true
+[prueba 98 puzzle 4] Tiempo empleado: 24127.0 ms // Nodos Generados: 37586 // Numero movimientos: 85 // Resuelto: true
+[prueba 99 puzzle 4] Tiempo empleado: 518.0 ms // Nodos Generados: 7270 // Numero movimientos: 75 // Resuelto: true
+[prueba 100 puzzle 4] Tiempo empleado: 406.0 ms // Nodos Generados: 6721 // Numero movimientos: 87 // Resuelto: true
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Tiempo medio empleado: 3732.91 ms
+Nodos generados media: 12401 
+Numero movimientos media: 77 
+Numero de resueltos: 100 
+Numero de no resueltos: 0
+Tasa de aciertos: 100 %
+Tasa de error: 0 %
+---------------------------------------------------------------------------------------------------------------------------------------------
