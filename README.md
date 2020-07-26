@@ -1,3 +1,14 @@
+# :books: Realizado por: 
+  - :computer: [Pedro Miguel Carmona Broncano](https://github.com/Pmcb04)
+  - :computer: [Rubén Marín Lucas](https://github.com/Pr0t0n9)
+  - :date: Curso 2019/2020
+  - :office: [Universidad de Extremadura](https://www.unex.es)
+  
+## :computer: PROGRAMAS UTILIZADOS
+   - :hammer: [Eclipse](https://www.eclipse.org/)
+   - :pencil: [Netbeans](https://netbeans.org/)
+
+
 # ENUNCIADO DE LA PRÁCTICA DE LA ASIGNATURA DE INTELIGENCIA ARTIFICIAL Y SISTEMAS INTELIGENTES 2019/2020
 
 ### :video_game: 14 puzzle
